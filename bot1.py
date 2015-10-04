@@ -1,10 +1,10 @@
 #basic framework for call and response twitterbot.
-#finds tweets that @mention the bot and save them into a "queue"
-#takes a tweet off the queue and replies to 1 every two minutes, to avoid rate limiting.
-#if closed, and reopened later, able to know which @mentions it has and hasn't replied to yet, so it can pick up where it left off without missing any commands
-#will pick up where it left off when code execution is stopped and resumed, but not if disconnects/reconnects to internet while running. needs to be implemented!
+#will pick up where it left off when code execution is stopped and resumed, and if disconnects/reconnects to internet while running
 
-#currently stores small amount of info in a text file. Eventually that info, along with player progress, should be stored in an SQL database.
+#todo:
+#currently stores info in text file. Should eventually update to an SQL database.
+#correctly handle different errors from twitter.
+#botname, as well as access_key and access_secret, should not be hardcoded! i think consumerkey and consumersecret can be the same app-wide
 
 import tweepy
 import json
@@ -12,10 +12,8 @@ import Queue
 import time
 
 
-#   NOTE: IF YOU WANT TO TEST AND RUN THIS CODE YOURSELF, CREATE A NEW TWITTER ACCOUNT AND CHANGE THE
+#   IF YOU WANT TO TEST AND RUN THIS CODE YOURSELF, CREATE A NEW TWITTER ACCOUNT AND CHANGE THE
 #   CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET, AND BOTNAME VARIABLES!!
-#   this is bc the info in last.txt is important to avoid duplicate replies, so running it on your own will cause it to reply to the same tweet twice,
-#   and get punished for duplicate tweets!
 CONSUMER_KEY = 'SNgHvKkkYwxpGZcJiKTwPfDbv'
 CONSUMER_SECRET = 'qaFXmZVZytrZrNeu3y0P5Fprx9sWQY66cjzjEMm3NjRozydlJI'
 ACCESS_KEY = '3745260316-YbIuTAoAZrCf5nWxrlGLtiib2L2oClGNSMxJS3x'
@@ -57,7 +55,7 @@ try:
 except IOError as e:
     print "last.txt not found"
 
-commands = [] # treat as FIFO queue, add at end, remove at beginning.
+commands = [] # treat as FIFO queue, add at end, remove at beginning. (pythons built in queue class is CRAP)
 while True:
     print "LOOP"
     #find all tweets containing the botname, to find @mentions of bot.
@@ -75,25 +73,28 @@ while True:
                     commands.append(command)
 
     except tweepy.TweepError as e:
-        print "error: " + e
+        print "Error getting commands: " + str(e.reason)
         # depending on TweepError.code, one may want to retry or wait
-
-    print "a"
 
     if len(commands) > 0:
         print "not empty"
         command = commands[0]
-        del commands[0]
-        print"pop"
         response = generateResponse(command)
-        api.update_status(status=response)
-        print('POSTED: ' + response)
+        try:
+            api.update_status(status=response)
+            del commands[0] #remove command from queue. happens after posting, so if there is an error it stays in the
+            print('POSTED: ' + response)
 
-        #save last processed command
-        print command.id
-        f = open("last.txt", "w")
-        f.write(str(command.id))
-        f.close()
+            #save last processed command
+            print command.id
+            f = open("last.txt", "w")
+            f.write(str(command.id))
+            f.close()
+        except tweepy.TweepError as e:
+            print "Error trying to post status: " + str(e.reason)
+            time.sleep(1080) #add additional wait to total 20 min in case of error, to avoid too many errors.
+            #this will be improved upon in future to better handle specific errors.
+
     else:
         print "queue empty, nothing to post"
 
