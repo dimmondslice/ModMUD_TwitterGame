@@ -1,0 +1,2 @@
+U/N = SDADBOT
+P/W = thisisapassword
