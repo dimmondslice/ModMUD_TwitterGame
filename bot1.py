@@ -74,7 +74,6 @@ def SendPic(command):
 
     except tweepy.TweepError as e:
         print "Error trying to post status: " + str(e.reason)
-        time.sleep(60) #add additional wait of 1 min in case of error, to avoid too many errors.
 		#this will be improved upon in future to better handle specific errors.
 
 def SendDM(command,response):
@@ -100,7 +99,6 @@ def SendDM(command,response):
 
     except tweepy.TweepError as e:
         print "Error trying to post status: " + str(e.reason)
-        time.sleep(60) #add additional wait of 1 min in case of error, to avoid too many errors.
 		#this will be improved upon in future to better handle specific errors.
 
 
@@ -159,12 +157,16 @@ try:
 except IOError as e:
 	print "last.txt not found"
 
+#read DM every 60 seconds, post every 5 seconds.
+readEveryMin = 0
 while True:
     print "LOOP"
 
     #Read in messages - currently only reading direct messages. May end up needing both.
-    ReadDM()
-    #ReadTweets()
+    if readEveryMin == 0:
+        readEveryMin = 12
+        ReadDM()
+        #ReadTweets()
 
     #post message
     if len(commands) > 0:
@@ -182,4 +184,5 @@ while True:
     else:
         print "queue empty, nothing to post"
 
-    time.sleep(60)
+    readEveryMin -= 1
+    time.sleep(5)
