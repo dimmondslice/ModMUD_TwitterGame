@@ -175,6 +175,9 @@ while True:
         if command.action == postPicture:
             SendPic(command)
         elif command.action == stopCMD :
+            f = open("last.txt", "w")
+            f.write(str(command.id))
+            f.close()
             del commands[0]
             break
         else:
