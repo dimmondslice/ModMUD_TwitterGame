@@ -1,4 +1,4 @@
-include Person
+from Person import *
 
 class NPC(Person):
 	"""docstring for NPC"""
