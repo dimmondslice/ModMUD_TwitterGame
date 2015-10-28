@@ -1,6 +1,6 @@
-include Actor
+from Actor import *
 
-class Person(Actor):
+class Person(Entity):
 	"""docstring for Person"""
 	def __init__(self):
 		super(Person, self).__init__()
