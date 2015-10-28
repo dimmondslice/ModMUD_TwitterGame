@@ -1,22 +1,23 @@
 #Handles image generation. Takes in a list of strings(tweets). returns image.
 
 from PIL import Image, ImageDraw, ImageFont
+from textwrap import wrap
 
 def gen(messages, title = ""):
 
-    lines = [title.center(50,"-")]
+    lines = [title.center(42,"-")]
     for message in messages:
-        while(True):
-            if len(message) <= 48:
-                lines.append(" " + message)
-                lines.append(" ")
-                break
-            else:
-                lines.append(" " + message[:48])
-                message = message[48:]
-    lines.append("--------------------------------------------------")
+        if messages.index(message)%2 == 1:
+            message = ">" + message
+        wrappedmessage = wrap(message, width=40)
+        for line in wrappedmessage:
+            lines.append(" " + line)
+        lines.append(" ")
 
-    image = Image.new("RGBA", (916,int(27 * len(lines))), (0,20,0))
+    lines.append(" >_")
+    lines.append("------------------------------------------")
+
+    image = Image.new("RGBA", (770,int(27 * len(lines))), (0,20,0))
 
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype("resources/MorePerfectDOSVGA.ttf", 32)
@@ -25,7 +26,7 @@ def gen(messages, title = ""):
     draw.text((8, 4), text, (0,255,0), font=font)
 
     #save image locally to test
-    #image.save("test.png")
+    #image.save("test2.png")
 
+    #return image
     return image
-
