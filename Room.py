@@ -28,6 +28,7 @@ class Room(object):
 		list of people in this room
 		list of objects in this room"""
 	def __init__(self):
+		Entity.__init__(self)
 		self.players = None
 		self.north= None
 		self.south= None
