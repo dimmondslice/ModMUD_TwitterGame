@@ -22,13 +22,13 @@ Map Class:
 from Entity import *
 from Player import *
 
-class Room(object):
+class Room(Entity):
 	"""name of room
 		Conections to other rooms, will be None is there isn't one
 		list of people in this room
 		list of objects in this room"""
 	def __init__(self):
-		Entity.__init__(self)
+		super(Room,self).__init__()
 		self.players = None
 		self.north= None
 		self.south= None
