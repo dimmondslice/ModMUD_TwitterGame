@@ -4,11 +4,11 @@ class Command(Entity):
 	"""docstring for Command"""
 	def __init__(self):
 		super (Command, self).__init__()
-		self.Grammer = [[]]
-
+		self.verb = ""
 					#list of strings
 	def Parse(self, words):
-		print("Yo you should have overloaded Command.Parse()")
+		if words[0] != self.verb:
+			print("yo wtf")
 
 
 
