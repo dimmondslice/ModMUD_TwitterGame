@@ -19,7 +19,7 @@ class Game(object):
 	def SaveGameState(self):
 		pass
 	def RunGame(self):
-		while g.running:
+		while self.running:
 			messages = twitFace.GetMessages()
 
 			if messages != None:
