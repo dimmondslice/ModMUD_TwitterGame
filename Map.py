@@ -10,24 +10,44 @@ class Map(object):
 		pass
 
 
-a = Room()
-a.description = "Test Room"
-b = Room()
-b.description = "Test Room 2"
 
-a.north = b
-b.north = a
-M = Map()
-P = Map()
+roomList = []
+linklist = []
 
 
 
-M.rooms.append(a)
-M.rooms.append(b)
+ 		
+for x in range(0,6):
+	templist = []
+	for y in range(0,6):
+		temp = Room()
+		temp.ID = str(x)+str(y)
+		temp.name = "Room " +temp.ID
+		linklist.append(temp)
+		templist.append(temp)
+	roomList.append(templist)
+q = 0
+for i in linklist:
+	for j in linklist:
+		if i !=j:
+			if int(i.ID) == (int(j.ID) - 1):
+				i.east = j
+				j.west = i
+				#print "E/W Made"
+			if int(i.ID) == (int(j.ID) - 10):
+				i.south = j
+				j.north = i
+				#print "N/S Made"
 
-M.name += "Not Blah"
-print P.rooms[0].north.description
-print M.rooms[1].north.description
 
-print P.name
-print M.name
+for x in range(0,6):
+	for y in range(0,6):
+		#print str(roomList[x][y].x()) + str(roomList[x][y].y()),
+		pass
+	#print
+
+
+for item in roomList:
+	for item2 in item:
+		print item2.name,
+	print
