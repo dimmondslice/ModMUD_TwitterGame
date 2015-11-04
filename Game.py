@@ -15,15 +15,14 @@ class Game(object):
 g = Game()
 p = Player()
 
-
 #twit = TwitterInterface()
 
 while g.running:
 
 	#messages = twit.GetMessages()
 
-	if messages != None:
-		p.Parse(messages[p.name])
+	#if messages != None:
+		#p.Parse(messages[p.name])
 
 	g.Update()
 	p.ParseMessage(raw_input("command: "))
