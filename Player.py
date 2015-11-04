@@ -4,8 +4,9 @@ from Tweet import Tweet
 
 class Player(Person):
 	"""docstring for Player"""
-	def __init__(self):
+	def __init__(self, _twitterID):
 		super(Player, self).__init__()
+		self.twitterID = _twitterID 
 		self.verbContext = {
 			"go" : Go(),
 			"tweet" : Tweet()

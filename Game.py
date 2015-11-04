@@ -2,27 +2,27 @@ from Player import Player
 
 class Game(object):
 	"""docstring for Game"""
-	def __init__(self):
+				 	   #list of strings
+	def __init__(self, _playerIDs):
 		super(Game, self).__init__()
 		self.running = True
+		self.players = {}
+		self.CreatePlayers(_playerIDs)
 	def Update(self):
 		pass
-	def CreatePlayers():
+	def CreatePlayers(self, _playerIDs):
+		for ID in _playerIDs:
+			self.players[ID] = Player(ID)
+
+	def SaveGameState(self):
 		pass
-	def SaveGameState():
-		pass
+	def RunGame(self):
+		while g.running:
+			#messages = twit.GetMessages()
 
-g = Game()
-p = Player()
+			#if messages != None:
+				#p.Parse(messages[p.name])
 
-#twit = TwitterInterface()
+			self.Update()
+			p.ParseMessage(raw_input("command: "))
 
-while g.running:
-
-	#messages = twit.GetMessages()
-
-	#if messages != None:
-		#p.Parse(messages[p.name])
-
-	g.Update()
-	p.ParseMessage(raw_input("command: "))
