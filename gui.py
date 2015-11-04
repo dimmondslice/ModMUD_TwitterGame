@@ -109,7 +109,7 @@ def ConfirmAccessToken(accessCode,botRunner):
         file.write(token[1]+'\n')
 
 def StartGame():
-    gameStarted = True
+    startedGame = True
         
 class App(threading.Thread):
     '''This is the central GUI class for the host client.'''
@@ -180,7 +180,7 @@ app = App()
 twitFace = None
 
 while twitFace is None:
-    if gameStarted:
+    if startedGame:
         twitFace = TwitterInterface(aKey=accessKey, aSecret=accessSecret, botName = authName)
         
 theGame = Game(_twitFace = twitFace, _usernames = userArray)
