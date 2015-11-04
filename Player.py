@@ -4,14 +4,13 @@ from Tweet import Tweet
 
 class Player(Person):
 	"""docstring for Player"""
-	def __init__(self, _twitterID):
+	def __init__(self, _username):
 		super(Player, self).__init__()
-		self.twitterID = _twitterID 
+		self.name = _username 
 		self.verbContext = {
 			"go" : Go(),
 			"tweet" : Tweet()
 		}
-		self.twitterID = ""
 
 							#input string
 	def ParseMessage(self, message):
