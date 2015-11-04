@@ -110,13 +110,14 @@ def ConfirmAccessToken(accessCode,botRunner):
         file.write(token[0]+'\n')
         file.write(token[1]+'\n')
 
-def StartGame():
-    startedGame = True
+def StartGame(sg):
+    sg = True
         
 class App(threading.Thread):
     '''This is the central GUI class for the host client.'''
     def __init__(self):
         threading.Thread.__init__(self)
+        self.startGame = False
         self.start()
 
     def callback(self):
@@ -133,6 +134,7 @@ class App(threading.Thread):
         #botRunner is a string variable that holds the name of the currently authenticated user.
         self.botRunner=StringVar()
         self.botRunner.set(authName)
+
         
         #The main window is broken up into 4 frames.
         #00 holds the host client name [IDname], the label prompt for that name [IDprompt], and the button to change the host client account [IDrequest].
@@ -173,7 +175,7 @@ class App(threading.Thread):
         
         remove = Button(self.frame11, text = "Remove User", command = lambda listBox=userListBox: RemoveUser(listBox) ).pack()
         
-        startGame = Button(self.rootWindow, text = "Start Game", command = lambda: StartGame()  )
+        startGame = Button(self.rootWindow, text = "Start Game", command = lambda sg = self.startGame: StartGame(sg)  )
         startGame.grid(row=2, column=0)
         
         self.rootWindow.mainloop()
@@ -184,7 +186,7 @@ app = App()
 twitFace = None
 
 while not startedGame:
-    pass
+    startedGame = app.startGame
         
 twitFace = TwitterInterface(aKey=accessKey, aSecret=accessSecret, botName = authName)
         
