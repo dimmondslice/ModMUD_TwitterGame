@@ -57,6 +57,8 @@ except tweepy.TweepError:
 
 #A boolean to determine whether or not a game has been started
 startedGame = False
+
+theGame = None
     
 def AddUser(listBox, entryBox):
     '''This function adds the user name in entryBox to the userArray. It is also listed in the listBox.'''
@@ -118,6 +120,8 @@ class App(threading.Thread):
         self.start()
 
     def callback(self):
+        if theGame is not None:
+            theGame.running = False
         self.rootWindow.quit()
     
     def run(self):
