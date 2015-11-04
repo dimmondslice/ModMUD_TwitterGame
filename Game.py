@@ -15,11 +15,13 @@ class Game(object):
 							# list of strings
 	def CreatePlayers(self, _usernames):
 		for ID in _usernames:
+			print(ID)
 			self.players[ID] = Player(ID)
 
 	def SaveGameState(self):
 		pass
 	def RunGame(self):
+		print("started game")
 		while self.running:
 			messages = twitFace.GetMessages()
 

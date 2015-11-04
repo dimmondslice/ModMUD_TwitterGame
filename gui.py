@@ -183,9 +183,10 @@ app = App()
 
 twitFace = None
 
-while twitFace is None:
-    if startedGame:
-        twitFace = TwitterInterface(aKey=accessKey, aSecret=accessSecret, botName = authName)
+while not startedGame:
+    pass
+        
+twitFace = TwitterInterface(aKey=accessKey, aSecret=accessSecret, botName = authName)
         
 theGame = Game(_twitFace = twitFace, _usernames = userArray)
 theGame.RunGame()

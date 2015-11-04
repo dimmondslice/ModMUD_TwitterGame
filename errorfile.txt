@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\johnss18\Documents\TwitterGame\gui.py", line 187, in <module>
+    pass
+KeyboardInterrupt
