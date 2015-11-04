@@ -36,43 +36,10 @@ class Room(Entity):
 		self.west= None
 		self.objects = None
 		self.ID = '00'
-		self.name = "A Room"
  
 
 	def x(self):
 		return int(self.ID[0]) 
 	def y(self):
 		return int(self.ID[1])
-
-roomList = []
-
-
-
- 		
-for x in range(0,6):
-	templist = []
-	for y in range(0,6):
-		temp = Room()
-		temp.ID = str(x)+str(y)
-		templist.append(temp)
-	roomList.append(templist)
-q = 0
-#for i in roomList:
-#	for j in roomList:
-#		if i !=j:
-#			if int(i.ID) == (int(j.ID) - 1):
-#				i.east = j
-#				j.west = i
-#				#print "E/W Made"
-#			if int(i.ID) == (int(j.ID) - 10):
-#				i.south = j
-#				j.north = i
-#				#print "N/S Made"
-
-
-for x in range(0,6):
-	for y in range(0,6):
-		print str(roomList[x][y].x()) + str(roomList[x][y].y()),
-	print
-
 

@@ -7,8 +7,6 @@ def gen(messages, title = ""):
 
     lines = [title.center(42,"-")]
     for message in messages:
-        if messages.index(message)%2 == 1:
-            message = ">" + message
         wrappedmessage = wrap(message, width=40)
         for line in wrappedmessage:
             lines.append(" " + line)
