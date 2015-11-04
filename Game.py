@@ -7,12 +7,21 @@ class Game(object):
 		self.running = True
 	def Update(self):
 		pass
-	def createPlayers():
+	def CreatePlayers():
 		pass
 
 g = Game()
 p = Player()
 
+
+twit = TwitterInterface()
+
 while g.running:
+
+	messages = twit.GetMessages()
+
+	if messages != None:
+		p.Parse(messages[p.name])
+
 	g.Update()
 	p.ParseMessage(raw_input("command: "))
