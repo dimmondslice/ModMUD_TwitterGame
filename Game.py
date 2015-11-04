@@ -1,4 +1,5 @@
 from Player import Player
+import TwitterInterface
 
 class Game(object):
 	"""docstring for Game"""

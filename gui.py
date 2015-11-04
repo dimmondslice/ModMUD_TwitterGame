@@ -2,8 +2,9 @@ from Tkinter import *
 import threading
 import tweepy
 import os.path
-#import TwitterInterface
+from TwitterInterface import TwitterInterface
 from webbrowser import open_new_tab
+
 
 #Open an error file for debugging.
 sys.stderr = open("errorfile.txt","w")
@@ -101,11 +102,15 @@ def ConfirmAccessToken(accessCode,botRunner):
         print "Error! Failed to get access token."
         return
     botRunner.set(theAPI.me().name)
+    authName = theAPI.me().name
     accessCode.configure(state=DISABLED)
     with open("previous.auth","w+") as file:
         file.write(token[0]+'\n')
         file.write(token[1]+'\n')
 
+def StartGame():
+    gameStarted = True
+        
 class App(threading.Thread):
     '''This is the central GUI class for the host client.'''
     def __init__(self):
@@ -164,7 +169,7 @@ class App(threading.Thread):
         
         remove = Button(self.frame11, text = "Remove User", command = lambda listBox=userListBox: RemoveUser(listBox) ).pack()
         
-        startGame = Button(self.rootWindow, text = "Start Game", command = lambda listBox=userListBox: RemoveUser(listBox) )
+        startGame = Button(self.rootWindow, text = "Start Game", command = lambda: StartGame()  )
         startGame.grid(row=2, column=0)
         
         self.rootWindow.mainloop()
@@ -176,4 +181,7 @@ twitFace = None
 
 while twitFace is None:
     if gameStarted:
-        twitFace = TwitterInterface()
+        twitFace = TwitterInterface(aKey=accessKey, aSecret=accessSecret, botName = authName)
+        
+theGame = Game(_twitFace = twitFace, _usernames = userArray)
+theGame.RunGame()
