@@ -107,7 +107,7 @@ class TwitterInterface(object):
         #pull numTweets messages from the log.
         messagelist = []
         try:
-            for row in cursor.execute('SELECT * FROM Log WHERE user=(?) ORDER BY ID ASC', (user,)):
+            for row in self.cursor.execute('SELECT * FROM Log WHERE user=(?) ORDER BY ID ASC', (user,)):
                 messagelist.append(">" + str(row[1]))
                 messagelist.append(row[2])
         except Exception as e:

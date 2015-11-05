@@ -29,10 +29,10 @@ class Game(object):
                 for message in messages:
                     response = self.players[message[0]].ParseMessage(message[1])
                     self.twitFace.SendMessage(message[2],message[1],response,message[0])
-                    if message[2].lower() == "tweet":
-                        print "You aksed me to tweet"
+                    if message[1].lower() == "tweet":
+                        print "You asked me to tweet"
                         self.twitFace.SendPic(message[0], message[2])
-                        self.twitFace.SendMessage(message[2],message[1],"I've tweeted your message.",message[0])
+                        #self.twitFace.SendMessage(message[2],message[1],"I've tweeted your message.",message[0])
                         print "I twote."
             self.Update()
             #p.ParseMessage(raw_input("command: "))
