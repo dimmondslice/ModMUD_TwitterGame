@@ -1,6 +1,6 @@
 from Actor import *
 
-class Person(Entity):
+class Person(Actor):
 	"""docstring for Person"""
 	def __init__(self):
 		super(Person, self).__init__()
