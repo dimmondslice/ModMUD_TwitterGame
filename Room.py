@@ -1,24 +1,3 @@
-'''
-name of room
-
-room.n bool hasDoor if yes
-room.s
-room.w
-room.e
-
-
-
-Conections to other rooms
-list of people in this room
-list of objects in this room
-
-Map Class:
-	List of rooms
-	gen all rooms
-	Base it on JSON
-	
-'''
-
 from Entity import *
 from Player import *
 
@@ -27,15 +6,18 @@ class Room(Entity):
 		Conections to other rooms, will be None is there isn't one
 		list of people in this room
 		list of objects in this room"""
-	def __init__(self,_ID):
+	def __init__(self,_ID= 0,_dict= None):
 		super(Room,self).__init__()
-		self.players = None
-		self.north= '00'
-		self.west= '00'
-		self.east= '00'
-		self.south= '00'
-		self.objects = None
-		self.ID = str(_ID).rjust(2,'0')
+		if _dict != None:
+			self.Decode(_dict)
+		else:
+			self.players = None
+			self.north= '00'
+			self.west= '00'
+			self.east= '00'
+			self.south= '00'
+			self.objects = None
+			self.ID = str(_ID).rjust(2,'0')
  
 
 	def x(self):
@@ -43,6 +25,16 @@ class Room(Entity):
 	def y(self):
 		return int(self.ID[1])
 
-	def encode(self):
+	def Encode(self):
 		return self.__dict__
-
+	def Decode(self, _room):
+		self.north = _room['north']
+		self.south = _room['south']
+		self.west = _room['west']
+		self.east = _room['east']
+		self.ID = _room['ID']
+		self.name = _room['name']
+		self.objects = _room['objects']
+		self.players = _room['players']
+		self.description = _room['description']
+		self.altDescription = _room['altDescription']
