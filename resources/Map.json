@@ -1,0 +1,41 @@
+{
+"Name": "", 
+"rooms": [
+{
+"east": "00", 
+"north": "00", 
+"description": "Description text", 
+"west": "00", 
+"players": null, 
+"objects": null, 
+"altDescription": " Default Alternate description text", 
+"ID": "01", 
+"south": "00", 
+"name": ""
+}, 
+{
+"east": "00", 
+"north": "00", 
+"description": "Description text", 
+"west": "00", 
+"players": null, 
+"objects": null, 
+"altDescription": " Default Alternate description text", 
+"ID": "02", 
+"south": "00", 
+"name": ""
+}, 
+{
+"east": "00", 
+"north": "00", 
+"description": "Description text", 
+"west": "00", 
+"players": null, 
+"objects": null, 
+"altDescription": " Default Alternate description text", 
+"ID": "03", 
+"south": "00", 
+"name": ""
+}
+]
+}

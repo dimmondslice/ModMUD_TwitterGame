@@ -61,3 +61,4 @@ target/
 tweepy-master/
 
 *.auth
+Img.pyc
