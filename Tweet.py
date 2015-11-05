@@ -6,10 +6,10 @@ class Tweet(Command):
 	def __init__(self):
 		super(Tweet, self).__init__()
 	def Parse(self, words):
-		TwitterInterface.ref.sendPic("actuallyspenc",)
-		if len(words) != 2:
-			return 'Improper use of "tweet" command.'
-		else:
-			return "You just tweeted the last 3 messages"
+		TwitterInterface.ref.sendPic("actuallyspenc", )
+		#if len(words) != 2:
+			#return 'Improper use of "tweet" command.'
+		#else:
+			#return "You just tweeted the last 3 messages"
 		#put the tweeting and pil stuff here
 		

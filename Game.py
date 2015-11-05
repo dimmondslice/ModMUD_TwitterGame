@@ -28,6 +28,8 @@ class Game(object):
 			if messages != []:
 				for message in messages:
 					self.players[message[0]].ParseMessage(message[1])
+					if message[2].islower() == "tweet":
+						twitFace.SendPic(message[0], message[2])
 
 			self.Update()
 			#p.ParseMessage(raw_input("command: "))
