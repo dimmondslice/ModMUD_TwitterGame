@@ -8,7 +8,10 @@ import sqlite3
 class TwitterInterface(object):
     CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
     CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
-    
+
+    #static variable that holds the reference to this singleton, the only instance of TwitterInterface 
+    ref = None
+
     def __init__(
                 self,
                 myapi,

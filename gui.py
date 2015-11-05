@@ -191,6 +191,7 @@ app = App()
 event.wait()
 
 twitFace = TwitterInterface(myapi=theAPI, botName = authName)
+twitFace.ref = twitFace
 theGame = Game.Game(_twitFace = twitFace, _usernames = userArray)
 print "Game instantiated"
 theGame.RunGame()
