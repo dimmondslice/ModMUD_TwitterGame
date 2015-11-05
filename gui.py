@@ -47,7 +47,7 @@ if userCheck:
         userArray = [x.strip('\n') for x in f.readlines()]
     
 #theAPI is our API object from tweepy. It takes in as much authentication information as we've accumulated at this time.
-theAPI = tweepy.API(authentication)
+theAPI = tweepy.API(authentication, wait_on_rate_limit = True, wait_on_rate_limit_notify = True)
 
 event = threading.Event()
 
@@ -116,15 +116,12 @@ def ConfirmAccessToken(accessCode,botRunner):
         file.write(token[1]+'\n')
 
 def StartGame(sg):
-    sg = True
-    print "I tried, man"
     event.set()
         
 class App(threading.Thread):
     '''This is the central GUI class for the host client.'''
     def __init__(self):
         threading.Thread.__init__(self)
-        self.startThisGame = False
         self.start()
 
     def callback(self):
@@ -182,7 +179,7 @@ class App(threading.Thread):
         
         remove = Button(self.frame11, text = "Remove User", command = lambda listBox=userListBox: RemoveUser(listBox) ).pack()
         
-        startGame = Button(self.rootWindow, text = "Start Game", command = lambda sg=self.startThisGame: StartGame(sg)  )
+        startGame = Button(self.rootWindow, text = "Start Game", command = lambda: StartGame()  )
         startGame.grid(row=2, column=0)
         
         self.rootWindow.mainloop()
@@ -190,13 +187,10 @@ class App(threading.Thread):
 
 app = App()
 
+#after the app is instantiated, the game code is delayed until the Start Game button has been pressed.
 event.wait()
 
 twitFace = TwitterInterface(myapi=theAPI, botName = authName)
-print "twitFace authed"
-
-print "twitter interface authed"
-
 theGame = Game.Game(_twitFace = twitFace, _usernames = userArray)
 print "Game instantiated"
 theGame.RunGame()

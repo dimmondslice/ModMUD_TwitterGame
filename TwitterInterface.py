@@ -15,7 +15,7 @@ class TwitterInterface(object):
                 botName = 'SDADBOT'):
         '''set self.api,self.lastRead,self.timerRead,self.timerPost,self.botName
         key,secret,botname passed in to eventually support alt accounts'''
-        self.timerRead = 0
+        self.timerRead = time.time()
         self.timerPost = 0
         self.timerPic = 0
         self.botName = botName
@@ -46,10 +46,7 @@ class TwitterInterface(object):
     def getMessages(self):
         '''returns list, each elem [username, text, id].
         If no elems, returns []'''
-        print "Time.time = " + str(time.time())
-        print "TimerRead = " + str(self.timerRead)
-        print "self.timerRead + self.READWAITTIME = " +  str(self.timerRead + self.READWAITTIME)
-        if time.time <= self.timerRead + self.READWAITTIME:
+        if time.time() <= self.timerRead + self.READWAITTIME:
             #not enough time passed since last api call
             return []
         self.timerRead = time.time()
@@ -57,6 +54,7 @@ class TwitterInterface(object):
         try:
             print "LASTID:: " + str(self.lastRead)
             messages = self.api.direct_messages(since_id = self.lastRead)
+            time.sleep(61)
             for message in reversed(messages):
                 if self.lastRead < int(message.id):
                     self.lastRead = int(message.id)
@@ -73,7 +71,7 @@ class TwitterInterface(object):
     def SendMessage(self, idNum, text, response, user):
         '''returns true if message succsessfuly posted, false otherwise'''
 
-        if time.time <= self.timerPost + self.POSTWAITTIME:
+        if time.time() <= self.timerPost + self.POSTWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerRead = time.time()
@@ -98,7 +96,7 @@ class TwitterInterface(object):
     def SendPic(self, user, idNum, numTweets = 4):
         '''returns true if message succsessfuly posted, false otherwise'''
 
-        if time.time <= self.timerPic + self.PICWAITTIME:
+        if time.time() <= self.timerPic + self.PICWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerPic = time.time()
