@@ -115,7 +115,7 @@ def ConfirmAccessToken(accessCode,botRunner):
         file.write(token[0]+'\n')
         file.write(token[1]+'\n')
 
-def StartGame(sg):
+def StartGame():
     event.set()
         
 class App(threading.Thread):
