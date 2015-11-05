@@ -12,28 +12,29 @@ class Game(object):
         self.CreatePlayers(_usernames)
     def Update(self):
         pass
-                            # list of strings
+                            
     def CreatePlayers(self, _usernames):
+                            # list of strings
         for ID in _usernames:
             print(ID)
-            self.players[ID] = Player(ID)
+            self.players[ID] = Player(ID)       #create a player object for every username
 
     def SaveGameState(self):
         pass
+
+    #only called once after constructing the Game object, this begins the master while loop 
     def RunGame(self):
         print("started game")
+
         while self.running:
-            messages = self.twitFace.getMessages()
+            messages = self.twitFace.getMessages()          #grab the messages from the twitter interface
 
-            if messages != []:
+            if messages != []:              #if the interface returned some messages
                 for message in messages:
-                    response = self.players[message[0]].ParseMessage(message[1])
+                    #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
+                    response = self.players[message[0]].ParseMessage(message[1])        
                     self.twitFace.SendMessage(message[2],message[1],response,message[0])
-                    if message[1].lower() == "tweet":
-                        print "You asked me to tweet"
-                        self.twitFace.SendPic(message[0], message[2])
-                        #self.twitFace.SendMessage(message[2],message[1],"I've tweeted your message.",message[0])
-                        print "I twote."
-            self.Update()
-            #p.ParseMessage(raw_input("command: "))
 
+                    #temporary direct parsing for the tweet command to test functionality
+                    if message[1].lower() == "tweet":
+                        self.twitFace.SendPic(message[0], message[2])
