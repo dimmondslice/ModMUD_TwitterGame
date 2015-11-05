@@ -23,11 +23,11 @@ class Game(object):
 	def RunGame(self):
 		print("started game")
 		while self.running:
-			messages = twitFace.GetMessages()
+			messages = self.twitFace.getMessages()
 
-			if messages != None:
+			if messages != []:
 				for message in messages:
-					players[message[0]].ParseMessage(messages[1])
+					self.players[message[0]].ParseMessage(message[1])
 
 			self.Update()
 			#p.ParseMessage(raw_input("command: "))

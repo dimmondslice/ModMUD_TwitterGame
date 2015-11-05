@@ -4,10 +4,10 @@ import tweepy
 import os.path
 from TwitterInterface import TwitterInterface
 from webbrowser import open_new_tab
-
+import Game
 
 #Open an error file for debugging.
-sys.stderr = open("errorfile.txt","w")
+#sys.stderr = open("errorfile.txt","w")
 
 #userArray stores the list of players in the current instance of the game.
 userArray = []
@@ -49,6 +49,9 @@ if userCheck:
 #theAPI is our API object from tweepy. It takes in as much authentication information as we've accumulated at this time.
 theAPI = tweepy.API(authentication)
 
+event = threading.Event()
+
+
 #If our user is authenticated already, then we can load 
 try:
     authName = theAPI.me().name
@@ -59,6 +62,8 @@ except tweepy.TweepError:
 startedGame = False
 
 theGame = None
+
+twitFace = None
     
 def AddUser(listBox, entryBox):
     '''This function adds the user name in entryBox to the userArray. It is also listed in the listBox.'''
@@ -112,12 +117,14 @@ def ConfirmAccessToken(accessCode,botRunner):
 
 def StartGame(sg):
     sg = True
+    print "I tried, man"
+    event.set()
         
 class App(threading.Thread):
     '''This is the central GUI class for the host client.'''
     def __init__(self):
         threading.Thread.__init__(self)
-        self.startGame = False
+        self.startThisGame = False
         self.start()
 
     def callback(self):
@@ -175,7 +182,7 @@ class App(threading.Thread):
         
         remove = Button(self.frame11, text = "Remove User", command = lambda listBox=userListBox: RemoveUser(listBox) ).pack()
         
-        startGame = Button(self.rootWindow, text = "Start Game", command = lambda sg = self.startGame: StartGame(sg)  )
+        startGame = Button(self.rootWindow, text = "Start Game", command = lambda sg=self.startThisGame: StartGame(sg)  )
         startGame.grid(row=2, column=0)
         
         self.rootWindow.mainloop()
@@ -183,12 +190,13 @@ class App(threading.Thread):
 
 app = App()
 
-twitFace = None
+event.wait()
 
-while not startedGame:
-    startedGame = app.startGame
-        
-twitFace = TwitterInterface(aKey=accessKey, aSecret=accessSecret, botName = authName)
-        
-theGame = Game(_twitFace = twitFace, _usernames = userArray)
+twitFace = TwitterInterface(myapi=theAPI, botName = authName)
+print "twitFace authed"
+
+print "twitter interface authed"
+
+theGame = Game.Game(_twitFace = twitFace, _usernames = userArray)
+print "Game instantiated"
 theGame.RunGame()

@@ -3,18 +3,15 @@ import time
 import Img
 import sqlite3
 
+
+
 class TwitterInterface(object):
-    CONSUMER_KEY = '6wdteAprvKNdBVC7ttiuiIKDZ'
-    CONSUMER_SECRET = 'wWeuAgcFwxBPrJoHskpnaIOA7OPpDJjnvoig1TWFJRkP0Zr2Ae'
-    READWAITTIME = 60
-    POSTWAITTIME = 5
-    PICWAITTIME = 5 #todo: unsure if its actually 5! must test!
-
-
+    CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
+    CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
+    
     def __init__(
                 self,
-                aKey = '3959461929-7tY4fAomlOncSlusApNXCxZRKSpwGUzh2QZotXg',
-                aSecret = 'b2QLZKGnwXwYO5M9fPyOlzOKP3ygqlwMpfO9myCwu1ip5',
+                myapi,
                 botName = 'SDADBOT'):
         '''set self.api,self.lastRead,self.timerRead,self.timerPost,self.botName
         key,secret,botname passed in to eventually support alt accounts'''
@@ -22,20 +19,17 @@ class TwitterInterface(object):
         self.timerPost = 0
         self.timerPic = 0
         self.botName = botName
+        
+        self.api = myapi
 
-        try:
-            auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-            auth.set_access_token(aKey, aSecret)
-            self.api = tweepy.API(auth)
-        except Exception as e:
-            #invalid credentials! todo: should raise an error
-            print "invalid credentials"
-
-        self.conn = sqlite3.connect('MainDB.db')
+        self.conn = sqlite3.connect('C:\\Users\\schatj5\\Documents\\GitHub\\TwitterGame\\MainDB.db')
         self.cursor = self.conn.cursor()
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS Log
              (ID INTEGER PRIMARY KEY, text TEXT, output TEXT, user TEXT)''')
-
+        self.READWAITTIME = 60
+        self.POSTWAITTIME = 5
+        self.PICWAITTIME = 5 #todo: unsure if its actually 5! must test!
+        
         try:
             f = open("last.txt", "r")
             s = f.readline()
@@ -52,15 +46,17 @@ class TwitterInterface(object):
     def getMessages(self):
         '''returns list, each elem [username, text, id].
         If no elems, returns []'''
-
-        if time.time <= self.timerRead + READWAITTIME:
+        print "Time.time = " + str(time.time())
+        print "TimerRead = " + str(self.timerRead)
+        print "self.timerRead + self.READWAITTIME = " +  str(self.timerRead + self.READWAITTIME)
+        if time.time <= self.timerRead + self.READWAITTIME:
             #not enough time passed since last api call
             return []
         self.timerRead = time.time()
         commands = []
         try:
-            print "LASTID:: " + self.lastRead
-            messages = api.direct_messages(since_id = self.lastRead)
+            print "LASTID:: " + str(self.lastRead)
+            messages = self.api.direct_messages(since_id = self.lastRead)
             for message in reversed(messages):
                 if self.lastRead < int(message.id):
                     self.lastRead = int(message.id)
@@ -77,12 +73,12 @@ class TwitterInterface(object):
     def SendMessage(self, idNum, text, response, user):
         '''returns true if message succsessfuly posted, false otherwise'''
 
-        if time.time <= self.timerPost + POSTWAITTIME:
+        if time.time <= self.timerPost + self.POSTWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerRead = time.time()
         try:
-            api.send_direct_message(user,text=response)
+            self.api.send_direct_message(user,text=response)
 
             try:
                 newlog = (idNum, text, response, user)
@@ -102,7 +98,7 @@ class TwitterInterface(object):
     def SendPic(self, user, idNum, numTweets = 4):
         '''returns true if message succsessfuly posted, false otherwise'''
 
-        if time.time <= self.timerPic + PICWAITTIME:
+        if time.time <= self.timerPic + self.PICWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerPic = time.time()
@@ -125,7 +121,7 @@ class TwitterInterface(object):
             return False
 
         try:
-            api.update_with_media(filename = "123.png", status = "Here is a highlight from @" + user)
+            self.api.update_with_media(filename = "123.png", status = "Here is a highlight from @" + user)
             print('POSTED pic to ' + user)
             f = open("last.txt", "w")
             f.write(str(idNum))
