@@ -3,7 +3,7 @@ from Player import *
 
 class Room(Entity):
 	"""name of room
-		Conections to other rooms, will be None is there isn't one
+		Conections to other rooms, will be '00' id there sin't one
 		list of people in this room
 		list of objects in this room"""
 	def __init__(self,_ID= 0,_dict= None):
@@ -19,7 +19,7 @@ class Room(Entity):
 			self.objects = None
 			self.ID = str(_ID).rjust(2,'0')
  
-
+	#Returns each part of the ID, will be somthing different later
 	def x(self):
 		return int(self.ID[0]) 
 	def y(self):
