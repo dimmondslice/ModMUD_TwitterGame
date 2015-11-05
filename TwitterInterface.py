@@ -8,7 +8,10 @@ import sqlite3
 class TwitterInterface(object):
     CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
     CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
-    
+
+    #static variable that holds the reference to this singleton, the only instance of TwitterInterface 
+    ref = None
+
     def __init__(
                 self,
                 myapi,
@@ -69,7 +72,7 @@ class TwitterInterface(object):
 
 
     def SendMessage(self, idNum, text, response, user):
-        '''returns true if message succsessfuly posted, false otherwise'''
+        '''returns true if message successfully posted, false otherwise'''
 
         if time.time() <= self.timerPost + self.POSTWAITTIME:
             #not enough time passed since last api call
@@ -80,7 +83,7 @@ class TwitterInterface(object):
 
             try:
                 newlog = (idNum, text, response, user)
-                self.cursor.execute('INSERT INTO stocks VALUES (?,?,?,?)', newlog)
+                self.cursor.execute('INSERT INTO Log VALUES (?,?,?,?)', newlog)
             except Exception as e:
                 print "sql stuff failed! oh no!"
 

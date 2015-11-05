@@ -62,3 +62,5 @@ tweepy-master/
 
 *.auth
 Img.pyc
+errorfile.txt
+user.list

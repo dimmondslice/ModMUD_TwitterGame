@@ -7,7 +7,7 @@ from webbrowser import open_new_tab
 import Game
 
 #Open an error file for debugging.
-#sys.stderr = open("errorfile.txt","w")
+sys.stderr = open("errorfile.txt","w")
 
 #userArray stores the list of players in the current instance of the game.
 userArray = []
@@ -115,7 +115,7 @@ def ConfirmAccessToken(accessCode,botRunner):
         file.write(token[0]+'\n')
         file.write(token[1]+'\n')
 
-def StartGame(sg):
+def StartGame():
     event.set()
         
 class App(threading.Thread):
@@ -191,6 +191,7 @@ app = App()
 event.wait()
 
 twitFace = TwitterInterface(myapi=theAPI, botName = authName)
+twitFace.ref = twitFace
 theGame = Game.Game(_twitFace = twitFace, _usernames = userArray)
 print "Game instantiated"
 theGame.RunGame()

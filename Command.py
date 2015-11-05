@@ -8,7 +8,7 @@ class Command(Entity):
 
 					#list of strings
 	def Parse(self, words):
-		print("Yo you should have overloaded Command.Parse()")
+		return "Yo you should have overloaded Command.Parse()"
 
 
 
