@@ -16,7 +16,7 @@ class Player(Person):
 	def ParseMessage(self, message):
 		words = message.lower().split()
 		if words[0] in self.verbContext:
-			self.verbContext[words[0]].Parse(words)
+			return self.verbContext[words[0]].Parse(words)
 		else:
-			print(words[0] + " is not a recognized command")
+			return words[0] + " is not a recognized command"
 
