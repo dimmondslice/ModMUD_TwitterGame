@@ -25,7 +25,7 @@ class TwitterInterface(object):
         
         self.api = myapi
 
-        self.conn = sqlite3.connect('C:\\Users\\schatj5\\Documents\\GitHub\\TwitterGame\\MainDB.db')
+        self.conn = sqlite3.connect('C:\\Users\\johnss18\\Documents\\TwitterGame\\MainDB.db')
         self.cursor = self.conn.cursor()
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS Log
              (ID INTEGER PRIMARY KEY, text TEXT, output TEXT, user TEXT)''')
