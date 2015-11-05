@@ -27,19 +27,22 @@ class Room(Entity):
 		Conections to other rooms, will be None is there isn't one
 		list of people in this room
 		list of objects in this room"""
-	def __init__(self):
+	def __init__(self,_ID):
 		super(Room,self).__init__()
 		self.players = None
-		self.north= None
-		self.south= None
-		self.east= None
-		self.west= None
+		self.north= '00'
+		self.west= '00'
+		self.east= '00'
+		self.south= '00'
 		self.objects = None
-		self.ID = '00'
+		self.ID = str(_ID).rjust(2,'0')
  
 
 	def x(self):
 		return int(self.ID[0]) 
 	def y(self):
 		return int(self.ID[1])
+
+	def encode(self):
+		return self.__dict__
 
