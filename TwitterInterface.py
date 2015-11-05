@@ -73,7 +73,7 @@ class TwitterInterface(object):
         if time.time() <= self.timerPost + self.POSTWAITTIME:
             #not enough time passed since last api call
             return False
-        self.timerRead = time.time()
+        self.timerPost = time.time()
         try:
             self.api.send_direct_message(user,text=response)
 
