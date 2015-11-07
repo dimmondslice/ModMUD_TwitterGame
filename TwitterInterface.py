@@ -2,6 +2,8 @@ import tweepy
 import time
 import Img
 import sqlite3
+import os
+import sys
 
 
 
@@ -13,14 +15,14 @@ class TwitterInterface(object):
     ref = None
 
     def __init__(self, myapi, botName = 'SDADBOT'):
-        self.timerRead = time.time()
+        self.timerRead = 0
         self.timerPost = 0
         self.timerPic = 0
         self.botName = botName
 
         self.api = myapi
 
-        self.conn = sqlite3.connect('C:\\Users\\johnss18\\Documents\\TwitterGame\\MainDB.db')
+        self.conn = sqlite3.connect( os.path.dirname(__file__) + '\\MainDB.db' )
         self.cursor = self.conn.cursor()
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS Log
              (ID INTEGER PRIMARY KEY, text TEXT, output TEXT, user TEXT)''')
@@ -52,8 +54,8 @@ class TwitterInterface(object):
         try:
             print "LASTID:: " + str(self.lastRead)
             messages = self.api.direct_messages(since_id = self.lastRead)
-            time.sleep(61)
             for message in reversed(messages):
+                #todo: check if user is in whitelist before adding!
                 if self.lastRead < int(message.id):
                     self.lastRead = int(message.id)
                 text = message.text.replace("@" + self.botName + " ", "")
