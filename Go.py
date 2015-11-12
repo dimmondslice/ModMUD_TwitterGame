@@ -5,7 +5,7 @@ class Go (Command):
     def __init__(self):
         super(Go, self).__init__()
                     
-        self.Grammer = [["go"],["north","south","east","west","poop"]]
+        self.Grammer = [["go","move", "walk"],["north","south","east","west","poop"]]
     def Parse(self, words):
                     #list of strings
         if len(words) != 2:
@@ -15,5 +15,5 @@ class Go (Command):
         elif words[1] in self.Grammer[1]:
             return "You went " + words[1]
         else:
-            return '"' +words[1] + "\" is not a recognized direction"
+            return '"' + words[1] + "\" is not a recognized direction"
 

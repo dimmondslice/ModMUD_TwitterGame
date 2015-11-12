@@ -10,8 +10,7 @@ class Game(object):
         self.twitFace = _twitFace
         self.players = {}
         self.CreatePlayers(_usernames)
-    def Update(self):
-        pass
+
                             
     def CreatePlayers(self, _usernames):
                             # list of strings
@@ -22,6 +21,9 @@ class Game(object):
     def SaveGameState(self):
         pass
 
+    def Update(self):
+        pass
+        
     #only called once after constructing the Game object, this begins the master while loop 
     def RunGame(self):
         print("started game")
