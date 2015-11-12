@@ -27,6 +27,7 @@ class Room(Entity):
 
 	def Encode(self):
 		return self.__dict__
+		# JSON to obj converter
 	def Decode(self, _room):
 		self.north = _room['north']
 		self.south = _room['south']
