@@ -3,32 +3,63 @@ import time
 import Img
 import sqlite3
 import os
-import sys
+
+class Singleton:
+    """   A non-thread-safe helper class to ease implementing singletons.
+    This should be used as a decorator to the class that should be a singleton.
+
+    The decorated class can define one `__init__` function that
+    takes only the `self` argument. Other than that, there are
+    no restrictions that apply to the decorated class.
+
+    To get the singleton instance, use the `Instance` method.
+    Trying to use `__call__` will result in a `TypeError` being raised.
+
+    Limitations: The decorated class cannot be inherited from.   """
+
+    def __init__(self, decorated):
+        self._decorated = decorated
+
+    def Instance(self):
+        """
+        Returns the singleton instance. Upon its first call, it creates a
+        new instance of the decorated class and calls its `__init__` method.
+        On all subsequent calls, the already created instance is returned.
+        """
+        try:
+            return self._instance
+        except AttributeError:
+            self._instance = self._decorated()
+            return self._instance
+
+    def __call__(self):
+        raise TypeError('Singletons must be accessed through `Instance()`.')
+
+    def __instancecheck__(self, inst):
+        return isinstance(inst, self._decorated)
 
 
-
+@Singleton
 class TwitterInterface(object):
     CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
     CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
 
-    #static variable that holds the reference to this singleton, the only instance of TwitterInterface
-    ref = None
+    def Setup(self, myapi, botName = 'SDADBOT'):
+        self.READWAITTIME = 60
+        self.POSTWAITTIME = 5
+        self.PICWAITTIME = 5
 
-    def __init__(self, myapi, botName = 'SDADBOT'):
+        self.botName = botName
+        self.api = myapi
+
         self.timerRead = 0
         self.timerPost = 0
         self.timerPic = 0
-        self.botName = botName
-
-        self.api = myapi
 
         self.conn = sqlite3.connect( os.path.dirname(__file__) + '\\MainDB.db' )
         self.cursor = self.conn.cursor()
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS Log
              (ID INTEGER PRIMARY KEY, text TEXT, output TEXT, user TEXT)''')
-        self.READWAITTIME = 60
-        self.POSTWAITTIME = 5
-        self.PICWAITTIME = 5 #todo: unsure if its actually 5! must test!
 
         try:
             f = open("last.txt", "r")

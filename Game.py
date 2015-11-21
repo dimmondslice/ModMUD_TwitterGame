@@ -1,13 +1,13 @@
 from Player import Player
-import TwitterInterface
+from TwitterInterface import TwitterInterface
 
 class Game(object):
     """docstring for Game"""
-                           #twitter interface  #list of strings
-    def __init__(self,    _twitFace,         _usernames):
+                       #list of strings
+    def __init__(self, _usernames):
         super(Game, self).__init__()
         self.running = True
-        self.twitFace = _twitFace
+        self.twitFace = TwitterInterface.Instance()
         self.players = {}
         self.CreatePlayers(_usernames)
     def Update(self):
