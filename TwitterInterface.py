@@ -52,7 +52,6 @@ class TwitterInterface(object):
         self.timerRead = time.time()
         commands = []
         try:
-            print "LASTID:: " + str(self.lastRead)
             messages = self.api.direct_messages(since_id = self.lastRead)
             for message in reversed(messages):
                 #todo: check if user is in whitelist before adding!
@@ -65,10 +64,19 @@ class TwitterInterface(object):
             print "Error getting commands: " + str(e.reason)
             return []
             # depending on TweepError.code, one may want to retry or wait
+        print "Read in " + str(len(commands)) + " commands"
         return commands
 
 
     def SendMessage(self, idNum, text, response, user):
+        """sends response as a direct message to user, then updates log
+        returns true if message successfully posted, false otherwise"""
+        while True:
+            #keep attempting until returns successfully.
+            if self.__SendMessage(idNum, text, response, user):
+                break
+
+    def __SendMessage(self, idNum, text, response, user):
         """sends response as a direct message to user, then updates log
         returns true if message successfully posted, false otherwise"""
 
@@ -95,6 +103,14 @@ class TwitterInterface(object):
             return False
 
     def SendPic(self, user, idNum, numTweets = 4):
+        """Tweets pic of last numTweets messages to user. Doesn't update Log.
+        returns true if message successfully posted, false otherwise"""
+        while True:
+            #keep attempting until returns successfully.
+            if self.__SendPic(user, idNum, numTweets):
+                break
+
+    def __SendPic(self, user, idNum, numTweets):
         """Tweets pic of last numTweets messages to user. Doesn't update Log.
         returns true if message successfully posted, false otherwise"""
 
