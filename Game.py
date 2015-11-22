@@ -10,9 +10,8 @@ class Game(object):
         self.twitFace = TwitterInterface.Instance()
         self.players = {}
         self.CreatePlayers(_usernames)
-    def Update(self):
-        pass
 
+                            
     def CreatePlayers(self, _usernames):
                             # list of strings
         for ID in _usernames:
@@ -22,10 +21,13 @@ class Game(object):
     def SaveGameState(self):
         pass
 
-    #only called once after constructing the Game object, this begins the master while loop
+    def Update(self):
+        pass
+        
+    #only called once after constructing the Game object, this begins the master while loop 
     def RunGame(self):
         print("started game")
-        messages = []
+
         while self.running:
             messages = self.twitFace.getMessages()          #grab the messages from the twitter interface
             #each message in form [user:string, text:string, id:int]
@@ -34,7 +36,9 @@ class Game(object):
                 #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
                 response = self.players[message[0]].ParseMessage(message[1])
                 self.twitFace.SendMessage(message[2],message[1],response,message[0])
-
                 #temporary direct parsing for the tweet command to test functionality
                 if message[1].lower() == "tweet":
-                    self.twitFace.SendPic(message[0], message[2])
+                    self.twitFace.SendPic(message[0], message[2])                    
+                if message[1].lower() == "inventory":
+                    self.players[message[0]].PrintInventory()
+                    print("game-inventory parse")
