@@ -38,6 +38,7 @@ class Game(object):
                 self.twitFace.SendMessage(message[2],message[1],response,message[0])
                 #temporary direct parsing for the tweet command to test functionality
                 if message[1].lower() == "tweet":
-                    self.twitFace.SendPic(message[0], message[2])                    print("game-inventory parse")
+                    self.twitFace.SendPic(message[0], message[2])                    
                 if message[1].lower() == "inventory":
-                    self.players[message[0]].PrintInventory()  
+                    self.players[message[0]].PrintInventory()
+                    print("game-inventory parse")
