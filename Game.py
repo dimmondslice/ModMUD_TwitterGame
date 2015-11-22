@@ -1,13 +1,13 @@
 from Player import Player
-import TwitterInterface
+from TwitterInterface import TwitterInterface
 
 class Game(object):
     """docstring for Game"""
-                           #twitter interface  #list of strings
-    def __init__(self,    _twitFace,         _usernames):
+                       #list of strings
+    def __init__(self, _usernames):
         super(Game, self).__init__()
         self.running = True
-        self.twitFace = _twitFace
+        self.twitFace = TwitterInterface.Instance()
         self.players = {}
         self.CreatePlayers(_usernames)
 
@@ -30,15 +30,14 @@ class Game(object):
 
         while self.running:
             messages = self.twitFace.getMessages()          #grab the messages from the twitter interface
+            #each message in form [user:string, text:string, id:int]
 
-            if messages != []:              #if the interface returned some messages
-                for message in messages:
-                    #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
-                    response = self.players[message[0]].ParseMessage(message[1])        
-                    self.twitFace.SendMessage(message[2],message[1],response,message[0])
-
-                    #temporary direct parsing for the tweet command to test functionality
-                    if message[1].lower() == "tweet":
-                        self.twitFace.SendPic(message[0], message[2])                    print("game-inventory parse")
-                    if message[1].lower() == "inventory":
-                        self.players[message[0]].PrintInventory()  
+            for message in messages:
+                #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
+                response = self.players[message[0]].ParseMessage(message[1])
+                self.twitFace.SendMessage(message[2],message[1],response,message[0])
+                #temporary direct parsing for the tweet command to test functionality
+                if message[1].lower() == "tweet":
+                    self.twitFace.SendPic(message[0], message[2])                    print("game-inventory parse")
+                if message[1].lower() == "inventory":
+                    self.players[message[0]].PrintInventory()  
