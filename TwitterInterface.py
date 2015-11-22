@@ -43,12 +43,15 @@ class Singleton:
 class TwitterInterface(object):
     CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
     CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
+    READWAITTIME = 60
+    POSTWAITTIME = 5
+    PICWAITTIME = 5
 
     def Setup(self, myapi, botName = 'SDADBOT'):
-        self.READWAITTIME = 60
-        self.POSTWAITTIME = 5
-        self.PICWAITTIME = 5
-
+        """
+        Sets initial parameters for the class
+        To be called only once when first setting up TwitterInterface
+        """
         self.botName = botName
         self.api = myapi
 
@@ -75,9 +78,11 @@ class TwitterInterface(object):
 
 
     def getMessages(self):
-        """Attempts to get direct messages sent to bot from twitter
-        returns list of [username, text, id]. If no elems, returns []"""
-        if time.time() <= self.timerRead + self.READWAITTIME:
+        """
+        Gets direct messages sent to bot from twitter since last call
+        Returns list of [username, text, id]. If no elems, returns []
+        """
+        if time.time() <= self.timerRead + READWAITTIME:
             #not enough time passed since last api call
             return []
         self.timerRead = time.time()
@@ -100,18 +105,22 @@ class TwitterInterface(object):
 
 
     def SendMessage(self, idNum, text, response, user):
-        """sends response as a direct message to user, then updates log
-        returns true if message successfully posted, false otherwise"""
+        """
+        Continuously attempts to call __SendMessage until it succeeds.
+        Failure not nessessarily due to error.
+        Twitter can be unresponsive, need to wait for rate limit, ect.
+        """
         while True:
             #keep attempting until returns successfully.
             if self.__SendMessage(idNum, text, response, user):
                 break
 
     def __SendMessage(self, idNum, text, response, user):
-        """sends response as a direct message to user, then updates log
-        returns true if message successfully posted, false otherwise"""
-
-        if time.time() <= self.timerPost + self.POSTWAITTIME:
+        """
+        Sends response as a direct message to user, then updates log
+        Returns true if message successfully posted, false otherwise
+        """
+        if time.time() <= self.timerPost + POSTWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerPost = time.time()
@@ -134,18 +143,22 @@ class TwitterInterface(object):
             return False
 
     def SendPic(self, user, idNum, numTweets = 4):
-        """Tweets pic of last numTweets messages to user. Doesn't update Log.
-        returns true if message successfully posted, false otherwise"""
+        """
+        Continuously attempts to call __SendPic until it succeeds.
+        Failure not nessessarily due to error.
+        Twitter can be unresponsive, need to wait for rate limit, ect.
+        """
         while True:
             #keep attempting until returns successfully.
             if self.__SendPic(user, idNum, numTweets):
                 break
 
     def __SendPic(self, user, idNum, numTweets):
-        """Tweets pic of last numTweets messages to user. Doesn't update Log.
-        returns true if message successfully posted, false otherwise"""
-
-        if time.time() <= self.timerPic + self.PICWAITTIME:
+        """
+        Tweets pic of last numTweets messages to user. Doesn't update Log.
+        Returns true if message successfully posted, false otherwise
+        """
+        if time.time() <= self.timerPic + PICWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerPic = time.time()
