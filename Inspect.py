@@ -12,6 +12,11 @@ class Inspect(Command):
             context = player.GetActorContext()
             if words[1] in context:
                 response = "You inspect the " + words[1] + ":\n" + context[words[1]].description
+            elif words[1] == "room":
+                 response = "You inspect the " + words[1] + ":\n"
+                 for actor in player.location.actors:
+                    print("thing in the roooooom")
+                    response += "    " + actor.name +"\n"
             else:
                 response = "There is no " + words[1] + " to inspect"
 
