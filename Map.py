@@ -27,5 +27,3 @@ class Map(object):
         _dict = json.load(mapfile)
         for room in _dict['rooms']:
 			Map.rooms.append(Room(_dict = room))
-
-
