@@ -6,14 +6,18 @@ class Go (Command):
         super(Go, self).__init__()
                     
         self.Grammer = [["go","move", "walk"],["north","south","east","west","poop"]]
-    def Parse(self, words, _directMessage):
+    def Parse(self, words, _dm, player):
                     #list of strings
+        response = "response"
         if len(words) != 2:
-            return 'improper use of "go" command. Try: "go" "west"'
+            response = 'improper use of "go" command. Try: "go" "west"'
         
         #make sure the direction the enetered was a valid direction
         elif words[1] in self.Grammer[1]:
-            return "You went " + words[1]
+            response = "You went " + words[1]
         else:
-            return '"' + words[1] + "\" is not a recognized direction"
+            response = '"' + words[1] + "\" is not a recognized direction"
+
+        self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
+
 

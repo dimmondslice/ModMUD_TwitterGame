@@ -16,7 +16,7 @@ class Person(Actor):
 		key = Item("Mysterious Key")
 		self.inventory.append(key)
 	def PrintInventory(self):
-		response = "printing inventory for " + self.name + '\n' #u"\u000a"
+		response = "Stuff in your inventory\n" 
 		for i in self.inventory:
-			response += i.name + '\n '
+			response += "        " + i.name + '\n '
 		return response
