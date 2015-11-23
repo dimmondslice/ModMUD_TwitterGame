@@ -17,19 +17,22 @@ class Go (Command):
                 room.players.append(_player.name)
         return "You went " + direction + ". Entered " + str(_player.location.description)
 
-    def Parse(self, _words, _directMessage, _player):
+    def Parse(self, _words, _dm, _player):
                     #list of strings
+        response = "response"
         if len(_words) != 2:
-            return 'improper use of "go" command. Try: "go" "west"'
+            response = 'improper use of "go" command. Try: "go" "west"'
 
         #make sure the direction the enetered was a valid direction
         elif _words[1] in self.Grammer[1]:
             newroomID = _player.location.neighbors[_words[1]]
             print "newroomid: " + str(newroomID)
             if newroomID != "00":
-                return self.MovePlayer(_player, _words[1], newroomID)
+                response = self.MovePlayer(_player, _words[1], newroomID)
             else:
-                return "You gallantly walk straight into a wall. Nice"
+                response = "You gallantly walk straight into a wall. Nice"
         else:
-            return '"' + _words[1] + "\" is not a recognized direction"
+            response = '"' + _words[1] + "\" is not a recognized direction"
+
+        self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 
