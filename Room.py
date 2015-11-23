@@ -18,7 +18,7 @@ class Room(Entity):
                 "east" : "00",
                 "south" : "00"
             }
-            self.actors = None
+            self.actors = []
             self.ID = str(_ID).rjust(2,'0')
 
     #Returns each part of the ID, will be somthing different later
