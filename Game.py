@@ -35,7 +35,7 @@ class Game(object):
                         "found room to put him in"
                         self.players[ID].location = room
                         room.players.append(ID)
-                        print "added! room.players is " + str(room.players)
+                        #print "added! room.players is " + str(room.players)
                         break
             else:
                 print ID + " already in map!"
