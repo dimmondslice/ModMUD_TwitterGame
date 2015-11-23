@@ -14,7 +14,7 @@ class Game(object):
         self.map = Map()
         self.map.DecodeJSON()
         self.players = {}
-		
+
         self.CreatePlayers(_usernames)
 
 
@@ -35,6 +35,7 @@ class Game(object):
                 #add the player to the map
                 for room in self.map.rooms:
                     if room.ID == '01':
+                        self.players[ID].location = room
                         if room.players == None:
                             room.players == [ID]
                         else:
@@ -65,7 +66,7 @@ class Game(object):
                 #temporary direct parsing for the tweet command to test functionality
 
                 if message[1].lower() == "tweet":
-                    self.twitFace.SendPic(message[0], message[2])                    
+                    self.twitFace.SendPic(message[0], message[2])
                 #if message[1].lower() == "inventory":
                     #self.players[message[0]].PrintInventory()
                     #print("game-inventory parse")
