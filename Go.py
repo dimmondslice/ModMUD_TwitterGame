@@ -6,7 +6,7 @@ class Go (Command):
         super(Go, self).__init__()
                     
         self.Grammer = [["go","move", "walk"],["north","south","east","west","poop"]]
-    def Parse(self, words):
+    def Parse(self, words, _directMessage):
                     #list of strings
         if len(words) != 2:
             return 'improper use of "go" command. Try: "go" "west"'

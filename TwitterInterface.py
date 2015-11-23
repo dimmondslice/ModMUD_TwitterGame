@@ -43,15 +43,16 @@ class Singleton:
 class TwitterInterface(object):
     CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
     CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
-    READWAITTIME = 60
-    POSTWAITTIME = 5
-    PICWAITTIME = 5
-
+    
     def Setup(self, myapi, botName = 'SDADBOT'):
         """
         Sets initial parameters for the class
         To be called only once when first setting up TwitterInterface
         """
+        self.READWAITTIME = 61
+        self.POSTWAITTIME = 6
+        self.PICWAITTIME = 5
+
         self.botName = botName
         self.api = myapi
 
@@ -82,7 +83,7 @@ class TwitterInterface(object):
         Gets direct messages sent to bot from twitter since last call
         Returns list of [username, text, id]. If no elems, returns []
         """
-        if time.time() <= self.timerRead + READWAITTIME:
+        if time.time() <= self.timerRead + self.READWAITTIME:
             #not enough time passed since last api call
             return []
         self.timerRead = time.time()
@@ -120,7 +121,7 @@ class TwitterInterface(object):
         Sends response as a direct message to user, then updates log
         Returns true if message successfully posted, false otherwise
         """
-        if time.time() <= self.timerPost + POSTWAITTIME:
+        if time.time() <= self.timerPost + self.POSTWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerPost = time.time()
@@ -158,7 +159,7 @@ class TwitterInterface(object):
         Tweets pic of last numTweets messages to user. Doesn't update Log.
         Returns true if message successfully posted, false otherwise
         """
-        if time.time() <= self.timerPic + PICWAITTIME:
+        if time.time() <= self.timerPic + self.PICWAITTIME:
             #not enough time passed since last api call
             return False
         self.timerPic = time.time()

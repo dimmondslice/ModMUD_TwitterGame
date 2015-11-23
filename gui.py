@@ -7,7 +7,7 @@ from webbrowser import open_new_tab
 import Game
 
 #Open an error file for debugging.
-sys.stderr = open("errorfile.txt","w")
+#sys.stderr = open("errorfile.txt","w")
 
 #userArray stores the list of players in the current instance of the game.
 userArray = []

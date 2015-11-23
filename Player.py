@@ -1,6 +1,8 @@
 from Person import *
 from Go import Go
 from Tweet import Tweet
+from Inventory import Inventory
+from TwitterInterface import TwitterInterface
 
 class Player(Person):
     """docstring for Player"""
@@ -11,15 +13,15 @@ class Player(Person):
         #the list of all command objects this player has access to at the moment
         self.verbContext = {
             "go" : Go(),
-            "tweet" : Tweet()
+            "tweet" : Tweet(),
+            "inventory" : Inventory()
         }
-
                             
-    def ParseMessage(self, message):
-                           #input string
-        words = message.lower().split()
+    def ParseMessage(self, _directMessage):
+                           #list of strings taken from twitter [username, text of the message, message id]
+        words = _directMessage[1].lower().split()
         if words[0] in self.verbContext:
-            return self.verbContext[words[0]].Parse(words)
+            self.verbContext[words[0]].Parse(words, _directMessage, self)
         else:
-            return words[0] + " is not a recognized command"
+            print words[0] + " is not a recognized command"
 

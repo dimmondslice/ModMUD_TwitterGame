@@ -6,6 +6,5 @@ class Entity(object):
 		self.description = "Description text"
 		self.altDescription = " Default Alternate description text"
 		self.name = ''
-		self.twit = TwitterInterface.Instance
 
 		
