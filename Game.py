@@ -1,20 +1,18 @@
 from Player import Player
 from TwitterInterface import TwitterInterface
 from Map import *
+from Singleton import Singleton
 
+@Singleton
 class Game(object):
     """docstring for Game"""
                        #list of strings
-    def __init__(self, _usernames):
-        super(Game, self).__init__()
+    def __init__(self):
         self.running = True
         self.twitFace = TwitterInterface.Instance()
         self.map = Map()
         self.map.DecodeJSON()
         self.players = {}
-
-        self.CreatePlayers(_usernames)
-
 
     def FindPlayer(self, username):
         for room in self.map.rooms:
@@ -59,4 +57,8 @@ class Game(object):
 
             for message in messages:
                 #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
-                self.players[message[0]].ParseMessage(message)
+                try:
+                    self.players[message[0]].ParseMessage(message)
+                except:
+                    #twitter user is not a player in the game
+                    print message[0] + " is not a player. message ignored"

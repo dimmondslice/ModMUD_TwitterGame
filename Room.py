@@ -30,7 +30,7 @@ class Room(Entity):
     def Encode(self):
         return self.__dict__
         # JSON to obj converter
-     def RemoveActor(self, _actor):
+    def RemoveActor(self, _actor):
      	for actor in self.actors:
      		if actor == _actor:
      			self.actors.remove(_actor)
