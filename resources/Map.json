@@ -9,9 +9,16 @@
 "south": "03"
 }, 
 "description": "NW", 
-"players": [
+"players": [], 
+"actors": [
+{
+"location": null, 
+"altDescription": "It appears to be half of a key", 
+"description": "maybe the other half is nearby", 
+"takeable": false, 
+"name": "halfkey"
+}
 ], 
-"actors": [], 
 "altDescription": " Default Alternate description text", 
 "ID": "01", 
 "name": ""
@@ -24,9 +31,16 @@
 "south": "04"
 }, 
 "description": "NE", 
-"players": [
+"players": [], 
+"actors": [
+{
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"description": "Description text", 
+"takeable": true, 
+"name": "test item"
+}
 ], 
-"actors": [], 
 "altDescription": " Default Alternate description text", 
 "ID": "02", 
 "name": ""
@@ -39,9 +53,16 @@
 "south": "00"
 }, 
 "description": "SW", 
-"players": [
+"players": [], 
+"actors": [
+{
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"description": "Description text", 
+"takeable": true, 
+"name": "test item"
+}
 ], 
-"actors": [], 
 "altDescription": " Default Alternate description text", 
 "ID": "03", 
 "name": ""
@@ -54,9 +75,16 @@
 "south": "00"
 }, 
 "description": "SE", 
-"players": [
+"players": [], 
+"actors": [
+{
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"description": "Description text", 
+"takeable": true, 
+"name": "test item"
+}
 ], 
-"actors": [], 
 "altDescription": " Default Alternate description text", 
 "ID": "04", 
 "name": ""

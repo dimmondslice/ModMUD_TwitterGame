@@ -1,5 +1,6 @@
-from Entity import *
+
 from Player import *
+from Item import Item
 
 class Room(Entity):
     """name of room
@@ -28,22 +29,33 @@ class Room(Entity):
         return int(self.ID[1])
 
     def Encode(self):
-        return self.__dict__
+        myDict = self.__dict__
+        actorDicts = []
+        for x in self.actors:
+            actorDicts.append(x.Encode())
+
+        myDict["actors"] = actorDicts
+
+        return myDict
         # JSON to obj converter
     def RemoveActor(self, _actor):
-     	for actor in self.actors:
-     		if actor == _actor:
-     			self.actors.remove(_actor)
-     			break
-
+        for actor in self.actors:
+            if actor == _actor:
+                self.actors.remove(_actor)
+                break
 
     def Decode(self, _room):
         self.neighbors = _room['neighbors']
         self.ID = _room['ID']
         self.name = _room['name']
-        self.actors = _room['actors']
         self.players = _room['players']
         self.description = _room['description']
         self.altDescription = _room['altDescription']
+        #redefine the actors list and populate it from data in the json
+        self.actors = []
+        for actor in _room['actors']:
+            dummy = Actor(actor)
+            dummy.location = self
+            self.actors.append(dummy)
 
 

@@ -20,3 +20,5 @@ class Person(Actor):
 		for i in self.inventory:
 			response += "        " + i.name + '\n '
 		return response
+	def AddToInventory(self, _actor):
+		self.inventory.append(_actor)

@@ -4,6 +4,9 @@ from Tweet import Tweet
 from Leave import Leave
 from Inventory import Inventory
 from TwitterInterface import TwitterInterface
+from Map import Map
+from Take import Take
+from Inspect import Inspect
 
 class Player(Person):
     """docstring for Player"""
@@ -16,9 +19,14 @@ class Player(Person):
             "go" : Go(),
             "tweet" : Tweet(),
             "inventory" : Inventory(),
-            "leave" : Leave()
+            "take" : Take(),
+            "leave" : Leave(),
+            "inspect" : Inspect()
         }
-
+        #dictionary of all actors available to this player including inventory, room contents, etc
+        #of the form "name of actor" : actor reference
+        self.actorContext = {}
+                            
     def ParseMessage(self, _directMessage):
                            #list of strings taken from twitter [username, text of the message, message id]
         words = _directMessage[1].lower().split()
@@ -26,4 +34,17 @@ class Player(Person):
             self.verbContext[words[0]].Parse(words, _directMessage, self)
         else:
             print words[0] + " is not a recognized command"
+
+    def GetActorContext(self):
+        context = {}
+        #populate the context with the items in your inventory
+        for item in self.inventory:
+            context[item.name] = item
+        for actor in self.location.actors:
+            context[actor.name] = actor
+
+        return context
+
+
+
 
