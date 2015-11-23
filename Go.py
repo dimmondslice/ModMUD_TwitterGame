@@ -15,7 +15,7 @@ class Go (Command):
             if room.ID == newroomID:
                 _player.location = room
                 room.players.append(_player.name)
-        return "You went " + direction + ". Entered " + str(_player.location.description)
+        return "You went " + direction + ". Entered " + str(_player.location.name)
 
     def Parse(self, _words, _dm, _player):
                     #list of strings
