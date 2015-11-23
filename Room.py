@@ -18,7 +18,7 @@ class Room(Entity):
                 "east" : "00",
                 "south" : "00"
             }
-            self.actors = None
+            self.actors = []
             self.ID = str(_ID).rjust(2,'0')
 
     #Returns each part of the ID, will be somthing different later
@@ -30,6 +30,12 @@ class Room(Entity):
     def Encode(self):
         return self.__dict__
         # JSON to obj converter
+     def RemoveActor(self, _actor):
+     	for actor in self.actors:
+     		if actor == _actor:
+     			self.actors.remove(_actor)
+     			break
+
 
     def Decode(self, _room):
         self.neighbors = _room['neighbors']
