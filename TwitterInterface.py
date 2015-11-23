@@ -43,14 +43,14 @@ class Singleton:
 class TwitterInterface(object):
     CONSUMER_KEY = "NZMk6RWDNI8d41GbTcZI4eWQf"
     CONSUMER_SECRET = "FQVENANJPofLA2JBifQZiMn04nTU0yDhxzwdJuTyG312mbenuJ"
-
+    
     def Setup(self, myapi, botName = 'SDADBOT'):
         """
         Sets initial parameters for the class
         To be called only once when first setting up TwitterInterface
         """
-        self.READWAITTIME = 60
-        self.POSTWAITTIME = 5
+        self.READWAITTIME = 61
+        self.POSTWAITTIME = 6
         self.PICWAITTIME = 5
 
         self.botName = botName

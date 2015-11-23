@@ -5,7 +5,8 @@ class Tweet(Command):
     """docstring for Tweet"""
     def __init__(self):
         super(Tweet, self).__init__()
-    def Parse(self, words):
+
+    def Parse(self, words, _directMessage):
         return "I've tweeted the last 4 messages."
 
         

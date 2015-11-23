@@ -4,6 +4,8 @@ from Map import *
 
 class Game(object):
     """docstring for Game"""
+    #static dictionary of all players in the form name: player object
+    players = {}
                        #list of strings
     def __init__(self, _usernames):
         super(Game, self).__init__()
@@ -12,6 +14,7 @@ class Game(object):
         self.map = Map()
         self.map.DecodeJSON()
         self.players = {}
+		
         self.CreatePlayers(_usernames)
 
 
@@ -55,11 +58,14 @@ class Game(object):
 
             for message in messages:
                 #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
-                response = self.players[message[0]].ParseMessage(message[1])
-                self.twitFace.SendMessage(message[2],message[1],response,message[0])
+                self.players[message[0]].ParseMessage(message)
+
+                #response = self.players[message[0]].ParseMessage(message[1])
+                #self.twitFace.SendMessage(message[2],message[1],response,message[0])
                 #temporary direct parsing for the tweet command to test functionality
+
                 if message[1].lower() == "tweet":
-                    self.twitFace.SendPic(message[0], message[2])
-                if message[1].lower() == "inventory":
-                    self.players[message[0]].PrintInventory()
-                    print("game-inventory parse")
+                    self.twitFace.SendPic(message[0], message[2])                    
+                #if message[1].lower() == "inventory":
+                    #self.players[message[0]].PrintInventory()
+                    #print("game-inventory parse")

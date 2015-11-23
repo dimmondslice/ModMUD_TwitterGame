@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\johnss18\Documents\TwitterGame\gui.py", line 194, in <module>
+    theGame = Game.Game(_usernames = userArray)
+  File "C:\Users\johnss18\Documents\TwitterGame\Game.py", line 12, in __init__
+    self.CreatePlayers(_usernames)
+  File "C:\Users\johnss18\Documents\TwitterGame\Game.py", line 19, in CreatePlayers
+    self.players[ID] = Player(ID)       #create a player object for every username
+  File "C:\Users\johnss18\Documents\TwitterGame\Player.py", line 13, in __init__
+    "go" : Go(),
+  File "C:\Users\johnss18\Documents\TwitterGame\Go.py", line 6, in __init__
+    super(Go, self).__init__()
+TypeError: __init__() takes exactly 2 arguments (1 given)
