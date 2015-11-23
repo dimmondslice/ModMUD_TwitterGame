@@ -1,4 +1,6 @@
 from Room import *
+from Item import Item
+
 import json
 class Map(object):
     """docstring for Map"""
@@ -7,7 +9,7 @@ class Map(object):
         Map.rooms = []
         Map.name = "Test"
 
-	# converts the list of room objects to a json for later use.
+    # converts the list of room objects to a json for later use.
     def EncodeMap(self):
         Map.jsonFile = open("resources\\Map.json",'w')
         Map.dictForm = {}
@@ -26,4 +28,5 @@ class Map(object):
         mapfile = open("resources\\Map.json",'r')
         _dict = json.load(mapfile)
         for room in _dict['rooms']:
-			Map.rooms.append(Room(_dict = room))
+            a = Room(_dict = room)
+            Map.rooms.append(a)

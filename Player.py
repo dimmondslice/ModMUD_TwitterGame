@@ -1,10 +1,12 @@
 from Person import *
 from Go import Go
 from Tweet import Tweet
+from Leave import Leave
 from Inventory import Inventory
 from TwitterInterface import TwitterInterface
 from Map import Map
 from Take import Take
+from Inspect import Inspect
 
 class Player(Person):
     """docstring for Player"""
@@ -17,7 +19,9 @@ class Player(Person):
             "go" : Go(),
             "tweet" : Tweet(),
             "inventory" : Inventory(),
-            "take" : Take()
+            "take" : Take(),
+            "leave" : Leave(),
+            "inspect" : Inspect()
         }
         #dictionary of all actors available to this player including inventory, room contents, etc
         #of the form "name of actor" : actor reference

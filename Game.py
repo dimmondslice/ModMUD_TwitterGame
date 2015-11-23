@@ -4,8 +4,6 @@ from Map import *
 
 class Game(object):
     """docstring for Game"""
-    #static dictionary of all players in the form name: player object
-    players = {}
                        #list of strings
     def __init__(self, _usernames):
         super(Game, self).__init__()
@@ -22,7 +20,7 @@ class Game(object):
         for room in self.map.rooms:
             if room.players != None:
                 for p in room.players:
-                    if p == ID:
+                    if p == username:
                         return True
         return False
 
