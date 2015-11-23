@@ -29,11 +29,3 @@ class Map(object):
 			Map.rooms.append(Room(_dict = room))
 
 
-
-M = Map()
-M.DecodeJSON()
-for x in M.rooms:
-	print x.ID
-M.EncodeMap()
-
-
