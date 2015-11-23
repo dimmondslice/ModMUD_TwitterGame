@@ -2,9 +2,9 @@
 "Name": "Test", 
 "rooms": [
 {
-"east": "00", 
-"north": "02", 
-"description": "Description text", 
+"east": "02", 
+"north": "00", 
+"description": "Northwest Room", 
 "west": "00", 
 "players": null, 
 "objects": null, 
@@ -16,24 +16,36 @@
 {
 "east": "00", 
 "north": "00", 
-"description": "Description text", 
-"west": "00", 
+"description": "Northeast Room", 
+"west": "01", 
 "players": null, 
 "objects": null, 
 "altDescription": " Default Alternate description text", 
 "ID": "02", 
-"south": "01", 
+"south": "04", 
 "name": ""
 }, 
 {
-"east": "00", 
+"east": "04", 
 "north": "01", 
-"description": "Description text", 
+"description": "Southwest Room", 
 "west": "00", 
 "players": null, 
 "objects": null, 
 "altDescription": " Default Alternate description text", 
 "ID": "03", 
+"south": "00", 
+"name": ""
+},
+{
+"east": "00", 
+"north": "02", 
+"description": "Southeast Room", 
+"west": "03", 
+"players": null, 
+"objects": null, 
+"altDescription": " Default Alternate description text", 
+"ID": "04", 
 "south": "00", 
 "name": ""
 }
