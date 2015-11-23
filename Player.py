@@ -16,7 +16,7 @@ class Player(Person):
             "tweet" : Tweet(),
             "inventory" : Inventory()
         }
-                            
+
     def ParseMessage(self, _directMessage):
                            #list of strings taken from twitter [username, text of the message, message id]
         words = _directMessage[1].lower().split()

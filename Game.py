@@ -32,15 +32,17 @@ class Game(object):
             print(ID)
             self.players[ID] = Player(ID)       #create a player object for every username
             if self.FindPlayer(ID) == False:
+                print "add " + ID + " to map!"
                 #add the player to the map
                 for room in self.map.rooms:
                     if room.ID == '01':
+                        "found room to put him in"
                         self.players[ID].location = room
-                        if room.players == None:
-                            room.players == [ID]
-                        else:
-                            room.players.append(ID)
+                        room.players.append(ID)
+                        print "added! room.players is " + str(room.players)
                         break
+            else:
+                print ID + " already in map!"
 
 
     def SaveGameState(self):
