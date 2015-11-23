@@ -134,7 +134,7 @@ class TwitterInterface(object):
         messagelist = []
         try:
             for row in self.cursor.execute('SELECT * FROM Log WHERE user=(?) ORDER BY ID ASC', (user,)):
-                messagelist.append(">" + str(row[1]))
+                messagelist.append("@" + str(user) + ": " + str(row[1]))
                 messagelist.append(row[2])
         except Exception as e:
             print "sql stuff failed! oh no!"
