@@ -4,8 +4,6 @@ from Map import *
 
 class Game(object):
     """docstring for Game"""
-    #static dictionary of all players in the form name: player object
-    players = {}
                        #list of strings
     def __init__(self, _usernames):
         super(Game, self).__init__()
@@ -13,6 +11,7 @@ class Game(object):
         self.twitFace = TwitterInterface.Instance()
         self.map = Map()
         self.map.DecodeJSON()
+        self.players = {}
 
         self.CreatePlayers(_usernames)
 
@@ -29,14 +28,14 @@ class Game(object):
                             # list of strings
         for ID in _usernames:
             print(ID)
-            players[ID] = Player(ID)       #create a player object for every username
+            self.players[ID] = Player(ID)       #create a player object for every username
             if self.FindPlayer(ID) == False:
                 print "add " + ID + " to map!"
                 #add the player to the map
                 for room in self.map.rooms:
                     if room.ID == '01':
                         "found room to put him in"
-                        players[ID].location = room
+                        self.players[ID].location = room
                         room.players.append(ID)
                         print "added! room.players is " + str(room.players)
                         break
@@ -60,4 +59,4 @@ class Game(object):
 
             for message in messages:
                 #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
-                players[message[0]].ParseMessage(message)
+                self.players[message[0]].ParseMessage(message)

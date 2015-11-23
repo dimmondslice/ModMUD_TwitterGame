@@ -1,5 +1,5 @@
 from Command import Command
-from Game import Game
+from Game import *
 
 class Leave (Command):
     """You use this to go"""
@@ -16,7 +16,7 @@ class Leave (Command):
 
         #remove player from the game
         _player.location.players.remove(_player.name)
-        del Game.players[_player.name]
+        #del Game.players[_player.name]
 
         response = "Be Gone!"
 
