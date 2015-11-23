@@ -6,7 +6,7 @@ class Leave (Command):
     def __init__(self):
         super(Leave, self).__init__()
 
-        self.Grammer = [["leave"],["game"]]
+        self.grammer = [["leave"],["game"]]
 
     def Parse(self, _words, _dm, _player):
                     #list of strings

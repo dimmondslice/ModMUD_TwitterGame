@@ -24,7 +24,7 @@ class Go (Command):
             response = 'improper use of "go" command. Try: "go" "west"'
 
         #make sure the direction the enetered was a valid direction
-        elif _words[1] in self.Grammer[1]:
+        elif _words[1] in self.grammer[1]:
             newroomID = _player.location.neighbors[_words[1]]
             print "newroomid: " + str(newroomID)
             if newroomID != "00":

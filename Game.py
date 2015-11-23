@@ -59,6 +59,6 @@ class Game(object):
                 #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
                 try:
                     self.players[message[0]].ParseMessage(message)
-                except:
+                except ValueError:
                     #twitter user is not a player in the game
                     print message[0] + " is not a player. message ignored"
