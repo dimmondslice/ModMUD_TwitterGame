@@ -7,4 +7,5 @@ class Actor(Entity):
 		self.canGrab = False
 		self.location = None
 		self.commands = []
+		self.takeable = True
 

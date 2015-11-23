@@ -3,6 +3,8 @@ from Go import Go
 from Tweet import Tweet
 from Inventory import Inventory
 from TwitterInterface import TwitterInterface
+from Map import Map
+from Take import Take
 
 class Player(Person):
     """docstring for Player"""
@@ -14,8 +16,12 @@ class Player(Person):
         self.verbContext = {
             "go" : Go(),
             "tweet" : Tweet(),
-            "inventory" : Inventory()
+            "inventory" : Inventory(),
+            "take" : Take()
         }
+        #dictionary of all actors available to this player including inventory, room contents, etc
+        #of the form "name of actor" : actor reference
+        self.actorContext = {}
                             
     def ParseMessage(self, _directMessage):
                            #list of strings taken from twitter [username, text of the message, message id]
@@ -24,4 +30,17 @@ class Player(Person):
             self.verbContext[words[0]].Parse(words, _directMessage, self)
         else:
             print words[0] + " is not a recognized command"
+
+    def GetActorContext(self):
+        context = {}
+        #populate the context with the items in your inventory
+        for item in self.inventory:
+            context[item.name] = item
+        for actor in self.location.actors:
+            context[actor.name] = actor
+
+        return context
+
+
+
 
