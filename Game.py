@@ -13,7 +13,6 @@ class Game(object):
         self.twitFace = TwitterInterface.Instance()
         self.map = Map()
         self.map.DecodeJSON()
-        self.players = {}
 
         self.CreatePlayers(_usernames)
 
@@ -22,7 +21,7 @@ class Game(object):
         for room in self.map.rooms:
             if room.players != None:
                 for p in room.players:
-                    if p == ID:
+                    if p == username:
                         return True
         return False
 
@@ -30,14 +29,14 @@ class Game(object):
                             # list of strings
         for ID in _usernames:
             print(ID)
-            self.players[ID] = Player(ID)       #create a player object for every username
+            players[ID] = Player(ID)       #create a player object for every username
             if self.FindPlayer(ID) == False:
                 print "add " + ID + " to map!"
                 #add the player to the map
                 for room in self.map.rooms:
                     if room.ID == '01':
                         "found room to put him in"
-                        self.players[ID].location = room
+                        players[ID].location = room
                         room.players.append(ID)
                         print "added! room.players is " + str(room.players)
                         break
@@ -61,4 +60,4 @@ class Game(object):
 
             for message in messages:
                 #send the message to the player so it can parse it, and choose a command, then return the response to send back to the user
-                self.players[message[0]].ParseMessage(message)
+                players[message[0]].ParseMessage(message)

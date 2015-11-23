@@ -1,6 +1,7 @@
 from Person import *
 from Go import Go
 from Tweet import Tweet
+from Leave import Leave
 from Inventory import Inventory
 from TwitterInterface import TwitterInterface
 
@@ -14,7 +15,8 @@ class Player(Person):
         self.verbContext = {
             "go" : Go(),
             "tweet" : Tweet(),
-            "inventory" : Inventory()
+            "inventory" : Inventory(),
+            "leave" : Leave()
         }
 
     def ParseMessage(self, _directMessage):
