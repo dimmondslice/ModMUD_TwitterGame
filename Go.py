@@ -6,7 +6,7 @@ class Go (Command):
     def __init__(self):
         super(Go, self).__init__()
 
-        self.Grammer = [["go","move", "walk"],["north","south","east","west","poop"]]
+        self.grammer = [["go","move", "walk"],["north","south","east","west"]]
 
     def MovePlayer(self, _player, direction, newroomID):
         print "moving..."
@@ -30,7 +30,7 @@ class Go (Command):
             if newroomID != "00":
                 response = self.MovePlayer(_player, _words[1], newroomID)
             else:
-                response = "You gallantly walk straight into a wall. Nice"
+                response = "You gallantly walk straight into a wall. Hopefully no one saw that"
         else:
             response = '"' + _words[1] + "\" is not a recognized direction"
 

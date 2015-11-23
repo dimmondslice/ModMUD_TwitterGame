@@ -25,11 +25,11 @@ class Take(Command):
                     _player.AddToInventory(actor)
                     actor.location.RemoveActor(actor)
                     actor.location = None
-                    response = "You picked up " + _words[1]
+                    response = "You put the " + _words[1] + " in your inventory"
                 else:
                     response = "You can't take the " + _words[1]
             else:
-                response = "there is no " + _words[1] + " here"
+                response = "There is no " + _words[1] + " to take"
 
         self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 
