@@ -15,7 +15,7 @@
 "location": null, 
 "altDescription": "maybe the other half is nearby",
 "description": "It appears to be half of a key", 
-"takeable": false, 
+"takeable": true, 
 "name": "halfkey"
 }
 ], 
@@ -36,9 +36,9 @@
 {
 "location": null, 
 "altDescription": " Default Alternate description text", 
-"description": "Description text", 
+"description": "This appears to be for the purposes of a demo", 
 "takeable": true, 
-"name": "test item"
+"name": "test"
 }
 ], 
 "altDescription": " Default Alternate description text", 
