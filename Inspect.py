@@ -12,6 +12,8 @@ class Inspect(Command):
             context = player.GetActorContext()
             if words[1] in context:
                 response = "You inspect the " + words[1] + ":\n" + context[words[1]].description
+            else:
+                response = "There is no " + words[1] + " to inspect"
 
         else:
             response = "Incorrect usage of inspect command"

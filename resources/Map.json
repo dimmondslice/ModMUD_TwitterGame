@@ -13,8 +13,8 @@
 "actors": [
 {
 "location": null, 
-"altDescription": "It appears to be half of a key", 
-"description": "maybe the other half is nearby", 
+"altDescription": "maybe the other half is nearby",
+"description": "It appears to be half of a key", 
 "takeable": false, 
 "name": "halfkey"
 }

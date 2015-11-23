@@ -13,7 +13,8 @@ class Tweet(Command):
             self.twit.SendPic(_dm[0], _dm[2])
             self.twit.SendMessage(_dm[2], _dm[1], "You just tweeted the last 4 messages", _dm[0])
         #if message is of the form " tweet 6" tweet the last 6 messages so long as "6" is a number
-        elif len(words) == 2:   
+        elif len(words) == 2:
+            #test to ensure that words[1] is an int    
             try:
                 int(words[1])
             except ValueError:
@@ -21,8 +22,13 @@ class Tweet(Command):
                 return
                 
             response = "You just tweeted the last "+words[1]+ " messages"
+            #tweet out a hightlights pictuer that displays the last  words[1] number of messages between the player and the bot
             self.twit.SendPic(_dm[0], _dm[2], int(words[1]))
-            self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
+            
         #if more then 2 words are entered, send an error
         elif len(words) > 2:
-            response = 'Improper use of "tweet" command. Try "Tweet" or "Tweet X" where X is a number'    
+            response = 'Improper use of "tweet" command. Try "Tweet" or "Tweet X" where X is a number'
+
+
+        #send the response back to the user using direct message
+        self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
