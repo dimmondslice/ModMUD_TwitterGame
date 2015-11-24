@@ -3,7 +3,8 @@ from Item import Item
 
 import json
 class Map(object):
-    """docstring for Map"""
+    '''Methods for  saving and loading a Map object from file.
+    '''
     def __init__(self):
         super(Map,self).__init__()
         Map.rooms = []

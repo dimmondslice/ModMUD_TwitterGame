@@ -10,7 +10,9 @@ class Actor(Entity):
             self.location = None
             #self.commands = []
             self.takeable = True
-
+    '''
+    Allows saving Actors to json as well as creating objects from a json file.
+    '''
     def Decode(self, _dict):
         self.location = _dict["location"]
         self.altDescription = _dict["altDescription"]

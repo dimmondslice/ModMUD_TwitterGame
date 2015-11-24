@@ -19,7 +19,7 @@ class Go (Command):
             if room.ID == newroomID:
                 _player.location = room
                 room.players.append(_player.name)
-        return "You went " + direction + ". Entered " + str(_player.location.description)
+        return "You went " + direction + ". Entered " + str(_player.location.name)
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, words, _directMessage, _player):
