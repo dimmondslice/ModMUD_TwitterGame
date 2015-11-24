@@ -1,13 +1,22 @@
 from Command import Command
 from TwitterInterface import TwitterInterface
 
+#Command type object that is used to intact with the twitter interface to tweet out a 
+#highlight of the recent conversation between the bot and the user
+#See Command class for general info on how commands work
+
 class Tweet(Command):
     """docstring for Tweet"""
     def __init__(self):
         super(Tweet, self).__init__()
+
         self.grammer = [["tweet"],[]]
 
-    def Parse(self, words, _dm, player):
+    #called from the Players ParseMessage(), this is overridden by the other commands
+    def Parse(self, words, _directMessage, _player):
+            #words = list of strings that have been tolower()ed
+            #_directMessage = [userName, messagetext, messageid,]
+            #_player = player type, the player who called this command
         response = ""
         if len(words) == 1:
             self.twit.SendPic(_dm[0], _dm[2])

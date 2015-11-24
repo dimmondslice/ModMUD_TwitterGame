@@ -21,8 +21,10 @@
 ], 
 "altDescription": " Default Alternate description text", 
 "ID": "01", 
-"name": ""
-}, 
+"name": "Room A"
+},
+
+
 {
 "neighbors": {
 "west": "01", 
@@ -37,14 +39,16 @@
 "location": null, 
 "altDescription": " Default Alternate description text", 
 "description": "This appears to be for the purposes of a demo", 
-"takeable": true, 
-"name": "test"
+"takeable": false, 
+"name": "chair"
 }
 ], 
 "altDescription": " Default Alternate description text", 
 "ID": "02", 
-"name": ""
+"name": "Room B"
 }, 
+
+
 {
 "neighbors": {
 "west": "00", 
@@ -60,12 +64,12 @@
 "altDescription": " Default Alternate description text", 
 "description": "Description text", 
 "takeable": true, 
-"name": "test item"
+"name": "shoe"
 }
 ], 
 "altDescription": " Default Alternate description text", 
 "ID": "03", 
-"name": ""
+"name": "Room C"
 }, 
 {
 "neighbors": {
@@ -87,7 +91,7 @@
 ], 
 "altDescription": " Default Alternate description text", 
 "ID": "04", 
-"name": ""
+"name": "Room D"
 }
 ]
 }

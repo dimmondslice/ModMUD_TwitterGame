@@ -1,12 +1,20 @@
 from Command import Command
 
+#Command type object that will show a player what is currently in their inventory
+#See Command class for general info on how commands work
+
 class Inventory(Command):
     """docstring for Inventory"""
     def __init__(self):
-        super(Inventory, self).__init__()       
+        super(Inventory, self).__init__() 
+
         self.grammer = [["inventory"]]
 
-    def Parse(self, _words, _dm, _player):
+    #called from the Players ParseMessage(), this is overridden by the other commands
+    def Parse(self, words, _directMessage, _player):
+            #words = list of strings that have been tolower()ed
+            #_directMessage = [userName, messagetext, messageid,]
+            #_player = player type, the player who called this command
         if len(_words) == 1:      
             response =  _player.PrintInventory() 
         else:

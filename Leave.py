@@ -8,9 +8,13 @@ class Leave (Command):
 
         self.grammer = [["leave"],["game"]]
 
-    def Parse(self, _words, _dm, _player):
-                    #list of strings
+    #called from the Players ParseMessage(), this is overridden by the other commands
+    def Parse(self, words, _directMessage, _player):
+            #words = list of strings that have been tolower()ed
+            #_directMessage = [userName, messagetext, messageid,]
+            #_player = player type, the player who called this command
         response = "response"
+        
         if len(_words) != 2 or _words[1] not in self.grammer[1]:
             response = 'improper use of "leave" command. Correct use is: "leave game"'
 

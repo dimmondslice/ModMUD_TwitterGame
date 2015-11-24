@@ -1,6 +1,9 @@
 from Command import Command
 from Map import Map
 
+#command type object that moves a player to one of the adject rooms on the map based on their imput
+#See Command class for general info on how commands work
+
 class Go (Command):
     """You use this to go"""
     def __init__(self):
@@ -8,6 +11,7 @@ class Go (Command):
 
         self.grammer = [["go","move", "walk"],["north","south","east","west"]]
 
+    #used in this class to move the players location based on their input
     def MovePlayer(self, _player, direction, newroomID):
         print "moving..."
         _player.location.players.remove(_player.name)
@@ -17,8 +21,11 @@ class Go (Command):
                 room.players.append(_player.name)
         return "You went " + direction + ". Entered " + str(_player.location.description)
 
-    def Parse(self, _words, _dm, _player):
-                    #list of strings
+    #called from the Players ParseMessage(), this is overridden by the other commands
+    def Parse(self, words, _directMessage, _player):
+            #words = list of strings that have been tolower()ed
+            #_directMessage = [userName, messagetext, messageid,]
+            #_player = player type, the player who called this command
         response = "response"
         if len(_words) != 2:
             response = 'improper use of "go" command. Try: "go" "west"'

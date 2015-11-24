@@ -14,6 +14,7 @@ class Game(object):
         self.map.DecodeJSON()
         self.players = {}
 
+    #returns a player object with the requested username
     def FindPlayer(self, username):
         for room in self.map.rooms:
             if room.players != None:
@@ -22,6 +23,7 @@ class Game(object):
                         return True
         return False
 
+    #called in init to instantiate all of the players necesary
     def CreatePlayers(self, _usernames):
                             # list of strings
         for ID in _usernames:
@@ -39,13 +41,6 @@ class Game(object):
                         break
             else:
                 print ID + " already in map!"
-
-
-    def SaveGameState(self):
-        pass
-
-    def Update(self):
-        pass
 
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):
