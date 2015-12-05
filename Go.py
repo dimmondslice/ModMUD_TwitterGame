@@ -9,6 +9,7 @@ class Go (Command):
     def __init__(self):
         super(Go, self).__init__()
 
+        self.name = "go"
         self.grammer = [["go","move", "walk"],["north","south","east","west"]]
 
     #used in this class to move the players location based on their input
@@ -22,9 +23,9 @@ class Go (Command):
         return "You went " + direction + ". Entered " + str(_player.location.name)
 
     #called from the Players ParseMessage(), this is overridden by the other commands
-    def Parse(self, words, _directMessage, _player):
+    def Parse(self, _words, _dm, _player):
             #words = list of strings that have been tolower()ed
-            #_directMessage = [userName, messagetext, messageid,]
+            #_dm = [userName, messagetext, messageid,]
             #_player = player type, the player who called this command
         response = "response"
         if len(_words) != 2:

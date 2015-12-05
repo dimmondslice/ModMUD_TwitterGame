@@ -5,6 +5,6 @@ class Entity(object):
 	def __init__(self):
 		self.description = "Description text"
 		self.altDescription = " Default Alternate description text"
-		self.name = ''
+		self.name = 'Unnamed Entity'
 
 		

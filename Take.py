@@ -8,6 +8,7 @@ class Take(Command):
     def __init__(self):
         super(Take, self).__init__()
 
+        self.name= "take"
         self.grammer = [["take"],[]]
 
     #called from the Players ParseMessage(), this is overridden by the other commands

@@ -8,10 +8,11 @@ class Inspect(Command):
     def __init__(self):
         super(Inspect, self).__init__()
 
+        self.name = "inspect"
         self.grammer = [["inspect"]]
 
     #called from the Players ParseMessage(), this is overridden by the other commands
-    def Parse(self, words, _directMessage, _player):
+    def Parse(self, words, _dm, player):
             #words = list of strings that have been tolower()ed
             #_directMessage = [userName, messagetext, messageid,]
             #_player = player type, the player who called this command
@@ -37,7 +38,7 @@ class Inspect(Command):
         else:
             response = "Incorrect usage of inspect command"
 
-        self.twit.SendMessage(dm[2], dm[1], response, dm[0])
+        self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 
 
 

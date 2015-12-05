@@ -6,11 +6,12 @@ class Leave (Command):
     def __init__(self):
         super(Leave, self).__init__()
 
+        self.name = "leave"
         self.grammer = [["leave"],["game"]]
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, words, _directMessage, _player):
-            #words = list of strings that have been tolower()ed
+            #words = list of strings that have been lower()ed
             #_directMessage = [userName, messagetext, messageid,]
             #_player = player type, the player who called this command
         response = "response"

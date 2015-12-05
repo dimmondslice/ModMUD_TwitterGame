@@ -1,6 +1,7 @@
-
+from Entity import Entity
 from Player import *
 from Item import Item
+from Actor import Actor
 
 class Room(Entity):
     """name of room

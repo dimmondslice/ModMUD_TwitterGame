@@ -1,4 +1,4 @@
-from Room import *
+from Room import Room
 from Item import Item
 
 import json

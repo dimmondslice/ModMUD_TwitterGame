@@ -8,14 +8,15 @@ class Inventory(Command):
     def __init__(self):
         super(Inventory, self).__init__() 
 
+        self.name = "inventory"
         self.grammer = [["inventory"]]
 
     #called from the Players ParseMessage(), this is overridden by the other commands
-    def Parse(self, words, _directMessage, _player):
+    def Parse(self, words, _dm, _player):
             #words = list of strings that have been tolower()ed
             #_directMessage = [userName, messagetext, messageid,]
             #_player = player type, the player who called this command
-        if len(_words) == 1:      
+        if len(words) == 1:      
             response =  _player.PrintInventory() 
         else:
             response = "incorrect usage of inventory command"
