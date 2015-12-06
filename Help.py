@@ -8,6 +8,7 @@ class Help(Command):
 
         self.grammer = [["help"],[]]
         self.name = "help"
+        self.description = "Do you really need help with the help command? Try typing 'help [command]'"
 
     def Parse(self, _words, _dm, _player):
             #words = list of strings that have been lower()ed
@@ -18,7 +19,7 @@ class Help(Command):
         #if the don't ask for help with a specific command
         if(len(_words) == 1):
             response = "You can interact with things using commands. Here is the full list of commands available to you right now " \
-                        + "(for more info about any of the commands try typing 'help' [command] )\n"
+                        + "(for more info about any of the commands try typing 'help [command]'' )\n"
     
             for comm in _player.verbContext.values():
                 response +="        " + comm.name + "\n"
