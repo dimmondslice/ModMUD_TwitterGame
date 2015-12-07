@@ -44,6 +44,11 @@ class Room(Entity):
             if actor == _actor:
                 self.actors.remove(_actor)
                 break
+    def AddActor(self, _actor):
+        self.actors.append(_actor)
+        _actor.location = self
+
+
         # Stores objs in a JSON format for ease of saving and reading.
     def Decode(self, _room):
         self.neighbors = _room['neighbors']
