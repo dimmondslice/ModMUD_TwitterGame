@@ -7,6 +7,7 @@ class Drop(Command):
         
         self.name = "drop"
         self.grammer = [["drop"],[]]
+        self.description = "Drop an item from your inventory into the room. 'drop [item name]'."
 
      #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, _words, _dm, _player):

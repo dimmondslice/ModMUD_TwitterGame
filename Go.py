@@ -11,6 +11,7 @@ class Go (Command):
 
         self.name = "go"
         self.grammer = [["go","move", "walk"],["north","south","east","west"]]
+        self.description = "Move to a new room in one of the cardinal directions. 'go west', 'go east', 'go north', or 'go south'."
 
     #used in this class to move the players location based on their input
     def MovePlayer(self, _player, direction, newroomID):
