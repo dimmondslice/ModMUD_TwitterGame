@@ -13,8 +13,9 @@ class Person(Actor):
 		self.weapon = None
 	#just used to put a couple items in the persons inventory
 	def InventoryInit(self):
-		#key = Item("Mysterious Key")
-		#self.inventory.append(key)
+		#pass
+		key = Item("Mysterious Key")
+		self.inventory.append(key)
 	def PrintInventory(self):
 		response = "Stuff in your inventory:\n" 
 		for i in self.inventory:

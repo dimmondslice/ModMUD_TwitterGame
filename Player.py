@@ -15,7 +15,6 @@ class Player(Person):
     def __init__(self, _username):
         super(Player, self).__init__()
         self.name = _username
-
         #the list of all command objects this player has access to at the moment
         self.verbContext = {
             "go" : Go(),
@@ -59,7 +58,6 @@ class Player(Person):
             self.verbContext[words[0]].Parse(words, _directMessage, self)
         else:
             #tell the player that they didn't enter a valid command
-            TwitterInterface.Instance().SendMessage(_directMessage[2], _directMessage[1] ,words[0] + " is not a recognized command", _directMessage[0])
 
 
     #returns a dictionary of all the actors in this players inventory and all the actors in their current room location
@@ -76,3 +74,14 @@ class Player(Person):
 
         return context
         
+    def Encode(self):
+        dictFrom =  dict(self.__dict__)
+        items = []
+        for x in self.inventory:
+            items.append(x.Encode())
+        del dictFrom["verbContext"]
+        dictFrom["inventory"] = items
+        return dictFrom
+    def Decode(self, _dict):
+        pass
+

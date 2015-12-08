@@ -1,5 +1,5 @@
 from Tkinter import *
-import threading
+import threading,json
 import tweepy
 import os.path
 from TwitterInterface import TwitterInterface
