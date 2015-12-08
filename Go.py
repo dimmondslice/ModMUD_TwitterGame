@@ -35,7 +35,7 @@ class Go (Command):
         elif _words[1] in self.grammer[1]:
             newroomID = _player.location.neighbors[_words[1]]
             print "newroomid: " + str(newroomID)
-            if newroomID != "00":
+            if newroomID != 0:
                 response = self.MovePlayer(_player, _words[1], newroomID)
             else:
                 response = "You gallantly walk straight into a wall. Hopefully no one saw that"
