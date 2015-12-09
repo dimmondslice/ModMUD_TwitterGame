@@ -12,9 +12,12 @@ from Drop import Drop
 
 class Player(Person):
     """docstring for Player"""
-    def __init__(self, _username):
+    def __init__(self, _username = "bah" , _dict = None):
         super(Player, self).__init__()
-        self.name = _username
+        if _dict != None: 
+            self.Decode(_dict)
+        else:
+            self.name = _username
         #the list of all command objects this player has access to at the moment
         self.verbContext = {
             "go" : Go(),
@@ -28,7 +31,7 @@ class Player(Person):
         }
         #dictionary of all actors available to this player including inventory, room contents, etc
         #of the form "name of actor" : actor reference
-        self.actorContext = {}
+        
     
     #reads in the direct message from the player, lower() and split() on the string, 
     #then call the appropriate command based on the first word in the message                      
@@ -88,5 +91,4 @@ class Player(Person):
         dictFrom["inventory"] = items
         return dictFrom
     def Decode(self, _dict):
-        pass
-
+        super(Player,self).Decode(_dict)
