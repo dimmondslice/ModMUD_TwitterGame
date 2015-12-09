@@ -11,7 +11,7 @@ class Actor(Entity):
             #self.commands = []
             self.takeable = True
             #
-            self.type = "default"
+            self.type = "Actor"
     '''
     Allows saving Actors to json as well as creating objects from a json file.
     '''
