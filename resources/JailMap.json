@@ -72,7 +72,7 @@
 		"altDescription": "Two halves make a whole.",
 		"description": "A part of a key. It's the bit with all the teeth on it.", 
 		"takeable": true, 
-		"name": "CellKey A FrontHalf"
+		"name": "CellKey A FrontHalf",
 		},
 		{
 		"location": null, 
