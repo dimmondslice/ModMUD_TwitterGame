@@ -1,13 +1,13 @@
 from Actor import Actor
-from Map import Map
+import Map
 
 class CellDoor(Actor):
     """docstring for CellDoor"""
     def __init__(self, _dict = None):
+        super(CellDoor, self).__init__()
         if _dict != None:
             self.Decode(_dict)
-        else:
-            super(CellDoor, self).__init__()
+        else:      
             self.name = "unnamed cell door"
             #of the form ["direction door leads", ID of room the door leads to]
             self.adjacentRoom = None    
@@ -23,16 +23,17 @@ class CellDoor(Actor):
             neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = self.location.ID
 
     def Decode(self, _dict):
+        #save location because the super.Decode is going to overwrite it. dumb I know but we have a demo coming up.
         super(CellDoor, self).Decode(_dict)
 
         #now is when I will actually set self.adjecentRoom, bc I can garauntee I know self.location now
 
-        roomID = self.location.neighbors[ _dict["adjecentRoom"]]
+        roomID = self.location.neighbors[ _dict["adjacentRoom"]]
         #within the code,unlike the JSON, self.adjacentRoom is actually a list in the form ["direction this door leads to", id of that room]
         self.adjacentRoom = [ _dict["adjacentRoom"], roomID]
         #now disable the neighbor connections
         neighborID = self.location.neighbors[_dict["adjacentRoom"]]
-        neighborRoom = Map.GetRoombyID(neighborID)
+        neighborRoom = Map.GetRoomByID(neighborID)
         #gross thing then just returns the opposite direction of the one given is used to turn off the "other side of this door"
         neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = 0
         neighborID = 0  #have this rooms neighbor point to nothing

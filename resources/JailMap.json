@@ -81,7 +81,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell A Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "south"
 
 		}
 	  ],
@@ -113,7 +114,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell B Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "south"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
@@ -144,7 +146,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell C Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "west"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
@@ -175,7 +178,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell D Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "west"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
@@ -206,7 +210,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell E Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "north"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
@@ -237,7 +242,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell F Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "north"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
@@ -268,7 +274,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell G Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "east"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
@@ -299,7 +306,8 @@
 		"description": "A sturdy door with a sturdier lock.", 
 		"takeable": false, 
 		"name": "Cell H Door",
-		"type":"CellDoor"
+		"type":"CellDoor",
+		"adjacentRoom" : "east"
 		}
 	  ],
       "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
