@@ -1,0 +1,310 @@
+{
+	"Name": "The Jail",
+	"rooms": [
+	{
+      "neighbors": {
+        "west": 12,
+        "east": 2,
+        "north": 5,
+        "south": 3
+      },
+      "description": "Cafeteria",
+      "players": [],
+      "actors": [],
+      "altDescription": "This is a cafeteria.",
+      "ID": 1,
+      "name": "Cafeteria"
+	},
+	{
+      "neighbors": {
+        "west": 1,
+        "east": 7,
+        "north": 6,
+        "south": 4
+      },
+      "description": "Office",
+      "players": [],
+      "actors": [],
+      "altDescription": "The Jail Office.",
+      "ID": 2,
+      "name": "Office"
+	},
+	{
+      "neighbors": {
+        "west": 11,
+        "east": 4,
+        "north": 1,
+        "south": 10
+      },
+      "description": "Study Hall",
+      "players": [],
+      "actors": [],
+      "altDescription": "Better your mind, better your soul.",
+      "ID": 3,
+      "name": "Study Hall"
+	},
+	{
+      "neighbors": {
+        "west": 3,
+        "east": 8,
+        "north": 2,
+        "south": 9
+      },
+      "description": "Workyard",
+      "players": [],
+      "actors": [],
+      "altDescription": "You can pick things up and put them down.",
+      "ID": 4,
+      "name": "Workyard"
+	},
+	{
+      "neighbors": {
+        "west": 0,
+        "east": 0,
+        "north": 0,
+        "south": 1
+      },
+      "description": "Cell A",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey A FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell A Door",
+		"type":"CellDoor"
+
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 5,
+      "name": "Cell A"
+	},
+	{
+      "neighbors": {
+        "west": 0,
+        "east": 0,
+        "north": 0,
+        "south": 2
+      },
+      "description": "Cell B",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey B FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell B Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 6,
+      "name": "Cell B"
+	},
+	{
+      "neighbors": {
+        "west": 2,
+        "east": 0,
+        "north": 0,
+        "south": 0
+      },
+      "description": "Cell C",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey C FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell C Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 7,
+      "name": "Cell C"
+	},
+	{
+      "neighbors": {
+        "west": 4,
+        "east": 0,
+        "north": 0,
+        "south": 0
+      },
+      "description": "Cell D",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey D FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell D Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 8,
+      "name": "Cell D"
+	},
+	{
+      "neighbors": {
+        "west": 0,
+        "east": 0,
+        "north": 4,
+        "south": 0
+      },
+      "description": "Cell E",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey E FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell E Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 9,
+      "name": "Cell E"
+	},
+	{
+      "neighbors": {
+        "west": 0,
+        "east": 0,
+        "north": 3,
+        "south": 0
+      },
+      "description": "Cell F",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey F FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell F Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 10,
+      "name": "Cell F"
+	},
+	{
+      "neighbors": {
+        "west": 0,
+        "east": 3,
+        "north": 0,
+        "south": 0
+      },
+      "description": "Cell G",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey G FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell G Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 11,
+      "name": "Cell G"
+	},
+	{
+      "neighbors": {
+        "west": 0,
+        "east": 1,
+        "north": 0,
+        "south": 0
+      },
+      "description": "Cell H",
+      "players": [],
+      "actors": [
+		{
+		"location": null, 
+		"altDescription": "Two halves make a whole.",
+		"description": "A part of a key. It's the bit with all the teeth on it.", 
+		"takeable": true, 
+		"name": "CellKey H FrontHalf",
+		"type":"Actor"
+		},
+		{
+		"location": null, 
+		"altDescription": "This exit could be the key to your escape.",
+		"description": "A sturdy door with a sturdier lock.", 
+		"takeable": false, 
+		"name": "Cell H Door",
+		"type":"CellDoor"
+		}
+	  ],
+      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
+      "ID": 12,
+      "name": "Cell H"
+	}
+	]
+}

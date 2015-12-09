@@ -1,6 +1,7 @@
 from Entity import Entity
 from Item import Item
 from Actor import Actor
+from pydoc import locate
 
 class Room(Entity):
     """name of room
@@ -53,8 +54,13 @@ class Room(Entity):
         #redefine the actors list and populate it from data in the json
         self.actors = []
         for actorDict in _room['actors']:
-            dummy = locate(actorDict["type"])(actorDict)#Actor(actorDict)
-            dummy.location = self
-            self.actors.append(dummy)
+            if(actorDict["type"]=="CellDoor"):
+                from CellDoor import CellDoor
+                dummy = locate(actorDict["type"]).CellDoor(actorDict)
+                del CellDoor
+            else:
+                dummy = Actor(actorDict)
+                dummy.location = self
+                self.actors.append(dummy)
 
 
