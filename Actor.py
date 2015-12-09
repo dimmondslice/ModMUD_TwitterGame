@@ -23,3 +23,6 @@ class Actor(Entity):
     def Encode(self):
         return self.__dict__
 
+    def Use(self):
+        pass
+

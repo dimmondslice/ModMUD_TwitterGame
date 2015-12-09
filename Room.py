@@ -1,5 +1,4 @@
 from Entity import Entity
-from Player import *
 from Item import Item
 from Actor import Actor
 
@@ -53,8 +52,8 @@ class Room(Entity):
         self.altDescription = _room['altDescription']
         #redefine the actors list and populate it from data in the json
         self.actors = []
-        for actor in _room['actors']:
-            dummy = Actor(actor)
+        for actorDict in _room['actors']:
+            dummy = locate(actorDict["type"])(actorDict)#Actor(actorDict)
             dummy.location = self
             self.actors.append(dummy)
 
