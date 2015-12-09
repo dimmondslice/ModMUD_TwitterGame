@@ -58,6 +58,7 @@ class Player(Person):
             self.verbContext[words[0]].Parse(words, _directMessage, self)
         else:
             #tell the player that they didn't enter a valid command
+             TwitterInterface.Instance().SendMessage(_directMessage[2], _directMessage[1] ,words[0] + " is not a recognized command", _directMessage[0])
 
 
     #returns a dictionary of all the actors in this players inventory and all the actors in their current room location
