@@ -18,14 +18,8 @@ class Map(object):
         self.dictForm = {}
         self.dictForm['Name'] = self.name
         self.dictForm['rooms'] = []
-        for x in self.rooms:
-            self.dictForm['rooms'].append(x.Encode())
-        print "finished getting rooms!"
-        print str(self.dictForm)
-        json.dump(self.dictForm,self.jsonFile,indent = -1)
-        print "dump!"
+          json.dump(self.dictForm,self.jsonFile,indent = -1)
         self.jsonFile.flush()
-        print "flush!"
         self.jsonFile.close()
 
 
