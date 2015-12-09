@@ -33,7 +33,7 @@ class Game(object):
                 print "add " + ID + " to map!"
                 #add the player to the map
                 for room in self.map.rooms:
-                    if room.ID == '01':
+                    if room.ID == 1:
                         "found room to put him in"
                         self.players[ID].location = room
                         room.players.append(ID)

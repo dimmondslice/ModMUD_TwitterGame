@@ -10,6 +10,7 @@ class Take(Command):
 
         self.name= "take"
         self.grammer = [["take"],[]]
+        self.description = "Pick up an item in the room. 'take [item name]'"
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, _words, _dm, _player):

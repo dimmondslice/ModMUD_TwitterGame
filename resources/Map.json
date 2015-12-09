@@ -3,10 +3,10 @@
 "rooms": [
 {
 "neighbors": {
-"west": "00", 
-"east": "02", 
-"north": "00", 
-"south": "03"
+"west": 0, 
+"east": 2, 
+"north": 0, 
+"south": 3
 }, 
 "description": "NW", 
 "players": [], 
@@ -20,17 +20,17 @@
 }
 ], 
 "altDescription": " Default Alternate description text", 
-"ID": "01", 
+"ID": 1, 
 "name": "Room A"
 },
 
 
 {
 "neighbors": {
-"west": "01", 
-"east": "00", 
-"north": "00", 
-"south": "04"
+"west": 1, 
+"east": 0, 
+"north": 0, 
+"south": 4
 }, 
 "description": "NE", 
 "players": [], 
@@ -44,17 +44,17 @@
 }
 ], 
 "altDescription": " Default Alternate description text", 
-"ID": "02", 
+"ID": 2, 
 "name": "Room B"
 }, 
 
 
 {
 "neighbors": {
-"west": "00", 
-"east": "04", 
-"north": "01", 
-"south": "00"
+"west": 0, 
+"east": 4, 
+"north": 1, 
+"south": 0
 }, 
 "description": "SW", 
 "players": [], 
@@ -68,15 +68,15 @@
 }
 ], 
 "altDescription": " Default Alternate description text", 
-"ID": "03", 
+"ID": 3, 
 "name": "Room C"
 }, 
 {
 "neighbors": {
-"west": "03", 
-"east": "00", 
-"north": "02", 
-"south": "00"
+"west": 3, 
+"east": 0, 
+"north": 2, 
+"south": 0
 }, 
 "description": "SE", 
 "players": [], 
@@ -90,7 +90,7 @@
 }
 ], 
 "altDescription": " Default Alternate description text", 
-"ID": "04", 
+"ID": 4, 
 "name": "Room D"
 }
 ]

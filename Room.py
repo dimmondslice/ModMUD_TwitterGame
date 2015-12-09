@@ -15,19 +15,13 @@ class Room(Entity):
         else:
             self.players = []
             self.neighbors = {
-                "north" : "00",
-                "west" : "00",
-                "east" : "00",
-                "south" : "00"
+                "north" : 0,
+                "west" : 0,
+                "east" : 0,
+                "south" : 0
             }
             self.actors = []
-            self.ID = str(_ID).rjust(2,'0')
-
-    #Returns each part of the ID, will be somthing different later
-    def x(self):
-        return int(self.ID[0])
-    def y(self):
-        return int(self.ID[1])
+            self.ID = 0
 
     def Encode(self):
         myDict = self.__dict__

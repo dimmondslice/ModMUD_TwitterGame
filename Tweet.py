@@ -12,6 +12,7 @@ class Tweet(Command):
 
         self.name = "tweet"
         self.grammer = [["tweet"],[]]
+        self.description = "Send the last few lines to a tweet from the bot. 'tweet [number]'."
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, words, _dm, _player):

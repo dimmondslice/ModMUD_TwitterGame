@@ -12,7 +12,7 @@ class Map(object):
 
     # converts the list of room objects to a json for later use.
     def EncodeMap(self):
-        Map.jsonFile = open("resources\\Map.json",'w')
+        Map.jsonFile = open("resources\\JailMap.json",'w')
         Map.dictForm = {}
         Map.dictForm['Name'] = Map.name
         Map.dictForm['rooms'] = []
@@ -26,7 +26,7 @@ class Map(object):
 
     #does the opposite of the above.
     def DecodeJSON(self):
-        mapfile = open("resources\\Map.json",'r')
+        mapfile = open("resources\\JailMap.json",'r')
         _dict = json.load(mapfile)
         for room in _dict['rooms']:
             a = Room(_dict = room)

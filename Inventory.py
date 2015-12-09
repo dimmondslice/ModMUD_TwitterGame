@@ -10,6 +10,7 @@ class Inventory(Command):
 
         self.name = "inventory"
         self.grammer = [["inventory"]]
+        self.description = "Check the contents of your inventory. 'inventory'."
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, words, _dm, _player):

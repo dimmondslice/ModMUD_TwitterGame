@@ -8,6 +8,7 @@ class Leave (Command):
 
         self.name = "leave"
         self.grammer = [["leave"],["game"]]
+        self.description = "Desert your friends as a coward might. WARNING: there is no return. 'leave game'."
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, words, _directMessage, _player):

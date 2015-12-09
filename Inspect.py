@@ -10,6 +10,7 @@ class Inspect(Command):
 
         self.name = "inspect"
         self.grammer = [["inspect"]]
+        self.description = "Examine an object or space thoroughly. 'inspect [item name]' or 'inspect room'."
 
     #called from the Players ParseMessage(), this is overridden by the other commands
     def Parse(self, words, _dm, player):
