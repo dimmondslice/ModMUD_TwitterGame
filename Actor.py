@@ -10,6 +10,8 @@ class Actor(Entity):
             self.location = None
             #self.commands = []
             self.takeable = True
+            #
+            self.type = "default"
     '''
     Allows saving Actors to json as well as creating objects from a json file.
     '''
@@ -19,6 +21,7 @@ class Actor(Entity):
         self.description = _dict["description"]
         self.takeable = _dict["takeable"]
         self.name = _dict["name"]
+        self.type = _dict["type"]
 
     def Encode(self):
         return self.__dict__

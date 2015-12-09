@@ -184,7 +184,6 @@ class App(threading.Thread):
 
         self.rootWindow.mainloop()
 
-
 app = App()
 
 #after the app is instantiated, the game code is delayed until the Start Game button has been pressed.

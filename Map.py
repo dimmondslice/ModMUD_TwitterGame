@@ -31,3 +31,7 @@ class Map(object):
         for room in _dict['rooms']:
             a = Room(_dict = room)
             Map.rooms.append(a)
+    def getRoomByID(self, ID):
+        for room in self.rooms:
+            if room.ID == ID:
+                return room
