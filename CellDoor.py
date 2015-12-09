@@ -23,7 +23,7 @@ class CellDoor(Actor):
             neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = self.location.ID
 
     def Decode(self, _dict):
-        super(CellDoor, self).Decode(self, _dict)
+        super(CellDoor, self).Decode(_dict)
 
         #now is when I will actually set self.adjecentRoom, bc I can garauntee I know self.location now
 
