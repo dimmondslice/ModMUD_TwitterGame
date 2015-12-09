@@ -10,7 +10,7 @@ class Game(object):
     def __init__(self):
         self.running = True
         self.twitFace = TwitterInterface.Instance()
-        self.map = Map()
+        self.map = Map.Instance()
         self.map.DecodeJSON()
         self.players = {}
 
@@ -45,7 +45,7 @@ class Game(object):
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):
         print("started game")
-        Map.EncodeMap()
+        Map.Instance().EncodeMap()
         while self.running:
             messages = self.twitFace.getMessages()          #grab the messages from the twitter interface
             #each message in form [user:string, text:string, id:int]

@@ -17,7 +17,7 @@ class Go (Command):
     def MovePlayer(self, _player, direction, newroomID):
         print "moving..."
         _player.location.players.remove(_player.name)
-        for room in Map.rooms:
+        for room in Map.Instance().rooms:
             if room.ID == newroomID:
                 _player.location = room
                 room.players.append(_player.name)
