@@ -15,7 +15,7 @@ class CellDoor(Actor):
     #cell door's use function will unlock the door if the player uses the right key on it, then it will reinstate the connection between the room
     #that contains this door, and the adjacent room
     def Use(self, _actorUsedWith):
-        if(_actorUsedWith.name == "cell " + self.location.ID + " key"):
+        if("cell" in _actorUsedWith.name and "key" in _actorUsedWith):
             #now re enable the neighbor connections
             self.location.neighbors[self.adjacentRoom[0]] = self.adjacentRoom[1] 
             neighborRoom = Map.GetRoombyID(self.adjacentRoom[1])
