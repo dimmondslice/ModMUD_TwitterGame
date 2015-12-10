@@ -24,11 +24,13 @@ class Combine(Command):
         response = "combine response"
 
         if(len(_words) != 4):
-            response = "incorrect usage of combine"
-        if _words[1] in self.grammer[1]:
+            response = "incorrect usage of combine. Try 'combine' [object] 'with' [object]"
+        elif _words[1] in self.grammer[1]:
             key = context[_words[1]]
+            key2 = context[_words[3]]
             if(type(key) is KeyHalf):
-                if(type(key) is KeyHalf and key.otherHalf == context[_words[3]].name):
+                print(key.otherHalf +" " + key2.name)
+                if(type(key2) is KeyHalf and key.otherHalf == key2.name):
                     #combine them
                     newKeyDict = {
                     "name" : "Cell " + key.name.split()[1] + " Key",
@@ -43,13 +45,16 @@ class Combine(Command):
                     if(key in _player.inventory):   #if the first key half was in the players inventory
                         _player.inventory.remove(key)
                     else:
-                        _player.location.remove(key)    #otherwise remove it from the room
+                        _player.location.actors.remove(key)    #otherwise remove it from the room
 
-                    if(context[_words[3]] in _player.inventory):   #if the second key half was in the players inventory
-                        _player.inventory.remove(context[_words[3]])
+                    if(key2 in _player.inventory):   #if the second key half was in the players inventory
+                        _player.inventory.remove(key2)
                     else:
-                        _player.location.remove(context[_words[3]])    #otherwise remove it from the room
+                        _player.location.actors.remove(key2)    #otherwise remove it from the room
 
+                    response = "THEY'RE GONNA COMBINE?!?.....Oh look you managed to put the keys together"
+                else:
+                    response = "looks like those key parts weren't meant for each other"
             else:
                 response = "You can't combine " + _words[1] +" and " + _words[3]
         else:

@@ -7,10 +7,13 @@ class KeyHalf(Actor):
             self.Decode(_dict)
         else:
             super(KeyHalf, self).__init__(_dict)
-            self.name ="CellKey A FrontHalf"
+            self.name ="default key name"
 
-        self.otherHalf = ""
+        """self.otherHalf = ""
         if("Front" in self.name):
             self.otherHalf = self.name.replace("Front", "Back")
         elif("Back" in self.name):
-            self.otherHalf = self.name.replace("Back", "Front")
+            self.otherHalf = self.name.replace("Back", "Front")"""
+    def Decode(self, _dict):
+        super(KeyHalf, self).Decode(_dict)
+        self.otherHalf = _dict["otherHalf"]

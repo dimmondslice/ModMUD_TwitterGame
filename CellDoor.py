@@ -26,7 +26,7 @@ class CellDoor(Actor):
             #to to the neighbor room and re enable its connection to this room
             neighborRoom.neighbors[self.OppositeDir(self.adjacentRoom[0])] = self.location.ID
 
-            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place. Why is a space prison using such antiquated technology anyway?"
+            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place and the cell door creaks open. Why is a space prison using such antiquated technology anyway?\nYou can now go " + self.adjacentRoom[0]
         else:
             response = "but it didn't seem to do anything"
 
@@ -36,16 +36,18 @@ class CellDoor(Actor):
         super(CellDoor, self).Decode(_dict)
 
         #now is when I will actually set self.adjecentRoom, bc I can garauntee I know self.location now
-
+        print("adjacentRoom = " + _dict["adjacentRoom"])
         roomID = self.location.neighbors[ _dict["adjacentRoom"]]
         #within the code,unlike the JSON, self.adjacentRoom is actually a list in the form ["direction this door leads to", id of that room]
+        print roomID
         self.adjacentRoom = [ _dict["adjacentRoom"], roomID]
         #now disable the neighbor connections
         neighborID = self.location.neighbors[_dict["adjacentRoom"]]
         neighborRoom = Map.Instance().GetRoomByID(neighborID)
         #gross thing then just returns the opposite direction of the one given is used to turn off the "other side of this door"
         neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = 0
-        neighborID = 0  #have this rooms neighbor point to nothing
+
+        self.location.neighbors[_dict["adjacentRoom"]]= 0  #have this rooms neighbor point to nothing
 
     def OppositeDir(self, _dir):
         _dir = _dir.lower()

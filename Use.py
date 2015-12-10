@@ -19,8 +19,9 @@ class Use(Command):
 
         response = "Use response"  
         for i in xrange(0,len(self.grammer)):
-            if(_words[i] not in self.grammer[i]):
-                response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"
+            for j in xrange(0, len(_words)):
+                if(_words[j] not in self.grammer[i]):
+                    response = "Incorrect usage of Use command. Make sure the object you're using already exists! Try 'Use' [object] 'on' [object]"
 
         if(len(_words) != 4):
             response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"

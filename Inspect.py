@@ -26,7 +26,7 @@ class Inspect(Command):
 
             #special case if the player is trying to inspect what is in the room
             elif words[1] == "room":
-                response = "You inspect the " + words[1] + ":\n"
+                response = "You inspect the " + player.location.name + ":\n"
                  #change the message if there is nothing in th room
                 if(len(player.location.actors) == 0):
                     response += "    oh looks like there's nothing in here"
