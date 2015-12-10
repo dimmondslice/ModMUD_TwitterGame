@@ -18,6 +18,8 @@ class Player(Person):
             self.Decode(_dict)
         else:
             self.name = _username
+            self.type = "Player"
+            
         #the list of all command objects this player has access to at the moment
         self.verbContext = {
             "go" : Go(),
