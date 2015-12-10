@@ -23,6 +23,9 @@ class CellDoor(Actor):
             #to to the neighbor room and re enable its connection to this room
             neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = self.location.ID
 
+            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place. Why is a space prison using such antiquated technology?"
+            self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
+
     def Decode(self, _dict):
         super(CellDoor, self).Decode(_dict)
 

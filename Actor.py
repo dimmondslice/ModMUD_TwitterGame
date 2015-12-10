@@ -27,6 +27,6 @@ class Actor(Entity):
         myDict['location'] = None
         return myDict
 
-    def Use(self):
+    def Use(self, _actorUsedWith):
         pass
 
