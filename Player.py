@@ -81,6 +81,8 @@ class Player(Person):
             for item in self.inventory:
                 context[item.name.lower()] = item
         if(includeRoom):
+            print "player GetActorContext, self.name = "
+            print(self.name)
             for actor in self.location.actors:
                 print(actor)
                 context[actor.name.lower()] = actor

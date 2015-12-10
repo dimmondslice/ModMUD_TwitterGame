@@ -35,8 +35,8 @@ class Game(object):
         roomidItr = 0
         for ID in _usernames:
             currRoomID = (roomidItr % 8) + 5
-            self.players[ID] = Player(ID)       #create a player object for every username
             if self.FindPlayer(ID) == False:
+                self.players[ID] = Player(ID)       #create a player object for every username
                 #print "not in map"
                 #add the player to the map.
                 for room in self.map.rooms:
@@ -47,8 +47,12 @@ class Game(object):
                         roomidItr += 1 #increment room id for next player, if any
                         break
             else:
-                #pass
-                print str(ID) + " already in map!"
+                #get the reference to the player if it exists already
+                for room in self.map.rooms:
+                    for p in room.players:
+                        if p.name == ID:
+                            self.players[ID] = p
+                            print str(ID) + " already in map!"
 
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):

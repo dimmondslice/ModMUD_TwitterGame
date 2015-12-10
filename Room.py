@@ -63,7 +63,6 @@ class Room(Entity):
         #redefine the actors list and populate it from data in the json
         self.actors = []
         for actorDict in _room['actors']:
-            print("about to decode " + actorDict["name"])
             if(actorDict["type"]=="CellDoor"):
                 print("about to decode celldoor")
                 from CellDoor import CellDoor
@@ -91,6 +90,7 @@ class Room(Entity):
         from Player import Player
         for player in _room['players']:
             dummy = Player(_dict = player)
+            dummy.location = self
             self.players.append(dummy)
         #print "Number of players in room "+ str(len(self.players))
 
