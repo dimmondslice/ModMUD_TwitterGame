@@ -1,5 +1,5 @@
 from Actor import Actor
-import Map
+from Map import Map
 
 class CellDoor(Actor):
     """docstring for CellDoor"""
@@ -7,18 +7,18 @@ class CellDoor(Actor):
         super(CellDoor, self).__init__()
         if _dict != None:
             self.Decode(_dict)
-        else:      
+        else:
             self.name = "unnamed cell door"
             #of the form ["direction door leads", ID of room the door leads to]
-            self.adjacentRoom = None    
+            self.adjacentRoom = None
 
     #cell door's use function will unlock the door if the player uses the right key on it, then it will reinstate the connection between the room
     #that contains this door, and the adjacent room
     def Use(self, _actorUsedWith):
         if("cell" in _actorUsedWith.name and "key" in _actorUsedWith):
             #now re enable the neighbor connections
-            self.location.neighbors[self.adjacentRoom[0]] = self.adjacentRoom[1] 
-            neighborRoom = Map.GetRoombyID(self.adjacentRoom[1])
+            self.location.neighbors[self.adjacentRoom[0]] = self.adjacentRoom[1]
+            neighborRoom = Map.Instance().GetRoombyID(self.adjacentRoom[1])
             #to to the neighbor room and re enable its connection to this room
             neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = self.location.ID
 
@@ -32,7 +32,7 @@ class CellDoor(Actor):
         self.adjacentRoom = [ _dict["adjacentRoom"], roomID]
         #now disable the neighbor connections
         neighborID = self.location.neighbors[_dict["adjacentRoom"]]
-        neighborRoom = Map.GetRoomByID(neighborID)
+        neighborRoom = Map.Instance().GetRoomByID(neighborID)
         #gross thing then just returns the opposite direction of the one given is used to turn off the "other side of this door"
         neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = 0
         neighborID = 0  #have this rooms neighbor point to nothing
@@ -47,8 +47,7 @@ class CellDoor(Actor):
             return "east"
         elif _dir == "east":
             return "west"
-    
+
     def Encode(self, _dict):
         myDict = self.__dict__
         myDict["adjacentRoom"] = self.adjacentRoom[0]
-        

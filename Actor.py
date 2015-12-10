@@ -23,7 +23,9 @@ class Actor(Entity):
         self.type = _dict["type"]
 
     def Encode(self):
-        return self.__dict__
+        myDict = self.__dict__
+        myDict['location'] = None
+        return myDict
 
     def Use(self):
         pass
