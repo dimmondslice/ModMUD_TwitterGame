@@ -87,7 +87,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey A BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -133,7 +134,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey B BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -179,7 +181,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey C BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -225,7 +228,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey D BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -271,7 +275,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey E BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -303,7 +308,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey F BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -335,7 +341,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey G BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -367,7 +374,8 @@
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
-"location": null
+"location": null,
+"otherHalf": "CellKey H BackHalf"
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
