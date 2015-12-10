@@ -16,11 +16,11 @@ class Go (Command):
     #used in this class to move the players location based on their input
     def MovePlayer(self, _player, direction, newroomID):
         print "moving..."
-        _player.location.players.remove(_player.name)
+        _player.location.players.remove(_player)
         for room in Map.Instance().rooms:
             if room.ID == newroomID:
                 _player.location = room
-                room.players.append(_player.name)
+                room.players.append(_player)
         return "You went " + direction + ". Entered " + str(_player.location.name)
 
     #called from the Players ParseMessage(), this is overridden by the other commands

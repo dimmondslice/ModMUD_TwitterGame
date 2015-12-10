@@ -10,6 +10,7 @@ from Inspect import Inspect
 from Help import Help
 from Drop import Drop
 from Combine import Combine
+from Use import Use
 
 class Player(Person):
     """docstring for Player"""
@@ -31,7 +32,8 @@ class Player(Person):
             "inspect" : Inspect(),
             "help" : Help(),
             "drop" : Drop(),
-            "Combine" : Combine()
+            "combine" : Combine(),
+            "use" : Use()
         }
         #dictionary of all actors available to this player including inventory, room contents, etc
         #of the form "name of actor" : actor reference
@@ -81,10 +83,7 @@ class Player(Person):
             for item in self.inventory:
                 context[item.name.lower()] = item
         if(includeRoom):
-            print "player GetActorContext, self.name = "
-            print(self.name)
             for actor in self.location.actors:
-                print(actor)
                 context[actor.name.lower()] = actor
 
         return context

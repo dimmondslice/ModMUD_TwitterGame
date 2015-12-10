@@ -2,6 +2,7 @@ from Player import Player
 from TwitterInterface import TwitterInterface
 from Map import *
 from Singleton import Singleton
+from KeyHalf import KeyHalf
 
 @Singleton
 class Game(object):
@@ -45,6 +46,18 @@ class Game(object):
                         self.players[ID].location = room
                         room.players.append(self.players[ID])
                         roomidItr += 1 #increment room id for next player, if any
+
+                        #by default every character gets a half key in their inventory! 
+                        newKeyDict = {
+                            "description": "A part of a key. It's the bit on top that you hold it by.", 
+                            "name": "CellKey "+ room.name + "BackHalf", 
+                            "altDescription": "Two halves make a whole.", 
+                            "type": "KeyHalf", 
+                            "takeable": True, 
+                            "location": None
+                        }
+                        key = KeyHalf(_dict = newKeyDict)
+                        self.players[ID].AddToInventory(key)
                         break
             else:
                 #get the reference to the player if it exists already
@@ -53,6 +66,18 @@ class Game(object):
                         if p.name == ID:
                             self.players[ID] = p
                             print str(ID) + " already in map!"
+                            #by default every character gets a half key in their inventory! 
+                            newKeyDict = {
+                                "description": "A part of a key. It's the bit on top that you hold it by.", 
+                                "name": "CellKey "+ room.name[5] + " BackHalf", 
+                                "altDescription": "Two halves make a whole.", 
+                                "type": "KeyHalf", 
+                                "takeable": True, 
+                                "location": None
+                            }
+                            key = KeyHalf(_dict = newKeyDict)
+                            self.players[ID].AddToInventory(key)
+                            print("everyone gets a key!!!!")
 
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):

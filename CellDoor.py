@@ -1,5 +1,6 @@
 from Actor import Actor
 from Map import Map
+from TwitterInterface import TwitterInterface
 
 class CellDoor(Actor):
     """docstring for CellDoor"""
@@ -16,15 +17,19 @@ class CellDoor(Actor):
     #cell door's use function will unlock the door if the player uses the right key on it, then it will reinstate the connection between the room
     #that contains this door, and the adjacent room
     def Use(self, _actorUsedWith):
-        if("cell" in _actorUsedWith.name and "key" in _actorUsedWith):
+        response = "celldoor use response"
+        if(_actorUsedWith.name[5] == self.name[5]):
             #now re enable the neighbor connections
             self.location.neighbors[self.adjacentRoom[0]] = self.adjacentRoom[1]
-            neighborRoom = Map.Instance().GetRoombyID(self.adjacentRoom[1])
+            neighborRoom = Map.Instance().GetRoomByID(self.adjacentRoom[1])
             #to to the neighbor room and re enable its connection to this room
-            neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = self.location.ID
+            neighborRoom.neighbors[self.OppositeDir(self.adjacentRoom[0])] = self.location.ID
 
-            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place. Why is a space prison using such antiquated technology?"
-            self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
+            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place. Why is a space prison using such antiquated technology anyway?"
+        else:
+            response = "but it didn't seem to do anything"
+
+        return response
 
     def Decode(self, _dict):
         super(CellDoor, self).Decode(_dict)

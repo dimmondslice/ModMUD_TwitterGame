@@ -23,11 +23,12 @@ class Take(Command):
         else:
             #build actor context for items available to pickup, only add items located in the room you are in, not the players inventory
             #adding this to the grammer is unnecesary but just reinforcing good practice.
-            context = {}
-            for actor in _player.location.actors:
-                context[actor.name] = actor
+            context = _player.GetActorContext(includeInventory = False, includeRoom = True)
             self.grammer[1] = context.keys()
-
+            print("context")
+            print context.keys()
+            print "words:"
+            print _words
             #if the input word is in the current actor context and it can be picked up, then add it to the plaeyrs inventory
             if _words[1] in self.grammer[1]:
                 actor = context[_words[1]]

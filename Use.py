@@ -21,8 +21,8 @@ class Use(Command):
             if(_words[i] not in self.grammer[i]):
                 response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"
 
-        response = "You used the " + _words[1] " on the " + _words[3]
-        context[_words[3]].Use(context[_words[1]])
+        response = "You used the " + _words[1] + " on the " + _words[3] + '\n'
+        response += context[_words[3]].Use(context[_words[1]])
 
         self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 
