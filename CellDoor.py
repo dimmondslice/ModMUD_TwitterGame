@@ -11,6 +11,7 @@ class CellDoor(Actor):
             self.name = "unnamed cell door"
             #of the form ["direction door leads", ID of room the door leads to]
             self.adjacentRoom = None
+            #self.adjacentRoomID = 0
 
     #cell door's use function will unlock the door if the player uses the right key on it, then it will reinstate the connection between the room
     #that contains this door, and the adjacent room
@@ -27,7 +28,7 @@ class CellDoor(Actor):
 
         #now is when I will actually set self.adjecentRoom, bc I can garauntee I know self.location now
 
-        roomID = self.location.neighbors[ _dict["adjacentRoom"][0]]
+        roomID = self.location.neighbors[ _dict["adjacentRoom"]]
         #within the code,unlike the JSON, self.adjacentRoom is actually a list in the form ["direction this door leads to", id of that room]
         self.adjacentRoom = [ _dict["adjacentRoom"], roomID]
         #now disable the neighbor connections
@@ -48,6 +49,7 @@ class CellDoor(Actor):
         elif _dir == "east":
             return "west"
 
-    def Encode(self, _dict):
+    def Encode(self):
         myDict = self.__dict__
         myDict["adjacentRoom"] = self.adjacentRoom[0]
+        return myDict
