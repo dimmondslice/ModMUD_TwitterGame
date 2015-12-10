@@ -26,21 +26,23 @@ class Game(object):
     #called in init to instantiate all of the players necesary
     def CreatePlayers(self, _usernames):
                             # list of strings
+        #loop through room IDs 5-12 aka (0-7)+5 for every player
+        roomidItr = 0
         for ID in _usernames:
-            print(ID)
+            currRoomID = (roomidItr % 8) + 5
             self.players[ID] = Player(ID)       #create a player object for every username
             if self.FindPlayer(ID) == False:
-                print "add " + ID + " to map!"
-                #add the player to the map
+                print "not in map"
+                #add the player to the map.
                 for room in self.map.rooms:
-                    if room.ID == 1:
-                        "found room to put him in"
+                    if room.ID == currRoomID:
+                        print(str(ID) + " placed in room "  + str(currRoomID))
                         self.players[ID].location = room
                         room.players.append(ID)
-                        #print "added! room.players is " + str(room.players)
+                        roomidItr += 1 #increment room id for next player, if any
                         break
             else:
-                print ID + " already in map!"
+                print str(ID) + " already in map!"
 
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):

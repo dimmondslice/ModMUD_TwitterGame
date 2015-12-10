@@ -28,9 +28,7 @@ class Map(object):
     #does the opposite of the above.
     def DecodeJSON(self):
         mapfile = open("resources\\JailMap.json",'r')
-        print "OPENED!"
         _dict = json.load(mapfile)
-        print "LOADED!"
         for room in _dict['rooms']:
             a = Room(_dict = room)
             self.rooms.append(a)
