@@ -15,14 +15,20 @@ class Use(Command):
             #_player = player type, the player who called this command
         context = _player.GetActorContext()
         self.grammer[1] =  context.keys()
+        self.grammer[3] = context.keys()
 
-        response = "Use response"
-        for i in xrange(0,len(_words)):
+        response = "Use response"  
+        for i in xrange(0,len(self.grammer)):
             if(_words[i] not in self.grammer[i]):
                 response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"
 
-        response = "You used the " + _words[1] + " on the " + _words[3] + '\n'
-        response += context[_words[3]].Use(context[_words[1]])
+        if(len(_words) != 4):
+            response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"
+        else:
+            if(context[_words[3]] == None):
+            response = "You used the " + _words[1] + " on the " + _words[3] + '\n'
+            response += context[_words[3]].Use(context[_words[1]])
+            print("returned from celldoor use")
 
         self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 

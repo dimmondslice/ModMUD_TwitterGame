@@ -21,7 +21,7 @@ class Combine(Command):
         self.grammer[1] =  context.keys()
         self.grammer[3] =  self.grammer[1]
 
-        response = "response"
+        response = "combine response"
 
         if(len(_words) != 4):
             response = "incorrect usage of combine"
@@ -39,8 +39,21 @@ class Combine(Command):
                     }
                     newKey = Actor(newKeyDict)
                     _player.AddToInventory(newKey)
-                    del(key)
-                    del(context[_words[3]])
+
+                    if(key in _player.inventory):   #if the first key half was in the players inventory
+                        _player.inventory.remove(key)
+                    else:
+                        _player.location.remove(key)    #otherwise remove it from the room
+
+                    if(context[_words[3]] in _player.inventory):   #if the second key half was in the players inventory
+                        _player.inventory.remove(context[_words[3]])
+                    else:
+                        _player.location.remove(context[_words[3]])    #otherwise remove it from the room
+
             else:
                 response = "You can't combine " + _words[1] +" and " + _words[3]
+        else:
+            response = "can't find " + _words[1]
+
+        self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
             

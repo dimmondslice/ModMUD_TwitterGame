@@ -50,7 +50,8 @@ class Player(Person):
         #if you find an actor whose name is words[i] + words[i+1] then adjust words[] to reflect the actor names, rather than individual words
         context = self.GetActorContext()
         i = 1    #counter var, start at one because don't need to worry about the command being more than one word long, for now at least
-        while i < len(words) -1:       #start at the second word and don't check the last word   
+        while i < len(words) -1:       #start at the second word and don't check the last word
+            print words[i]   
             if words[i] not in context.keys():
                 #if the second word is not in the actor contex, search in the context through every actor
                 for actorName in context.keys():
@@ -59,7 +60,7 @@ class Player(Person):
                         if words[i] + " " + words[i+1] == actorName.lower():
                             words[i] = words[i] + " " + words[i+1]
                             del(words[i+1])
-                        elif words[i] + " " + words[i+1] + " " + words[i+2] == actorName.lower():
+                        elif i+2 < len(words) and words[i] + " " + words[i+1] + " " + words[i+2] == actorName.lower():
                             words[i] = words[i] + " " + words[i+1] + " " + words[i+2]
                             del(words[i+2])
                             del(words[i+1])
