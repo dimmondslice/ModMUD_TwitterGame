@@ -23,12 +23,11 @@ class CellDoor(Actor):
             neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = self.location.ID
 
     def Decode(self, _dict):
-        #save location because the super.Decode is going to overwrite it. dumb I know but we have a demo coming up.
         super(CellDoor, self).Decode(_dict)
 
         #now is when I will actually set self.adjecentRoom, bc I can garauntee I know self.location now
 
-        roomID = self.location.neighbors[ _dict["adjacentRoom"]]
+        roomID = self.location.neighbors[ _dict["adjacentRoom"][0]]
         #within the code,unlike the JSON, self.adjacentRoom is actually a list in the form ["direction this door leads to", id of that room]
         self.adjacentRoom = [ _dict["adjacentRoom"], roomID]
         #now disable the neighbor connections
@@ -48,5 +47,8 @@ class CellDoor(Actor):
             return "east"
         elif _dir == "east":
             return "west"
-        
+    
+    def Encode(self, _dict):
+        myDict = self.__dict__
+        myDict["adjacentRoom"] = self.adjacentRoom[0]
         

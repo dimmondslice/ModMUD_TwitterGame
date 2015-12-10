@@ -9,6 +9,7 @@ from Take import Take
 from Inspect import Inspect
 from Help import Help
 from Drop import Drop
+from Combine import Combine
 
 class Player(Person):
     """docstring for Player"""
@@ -27,7 +28,8 @@ class Player(Person):
             "leave" : Leave(),
             "inspect" : Inspect(),
             "help" : Help(),
-            "drop" : Drop()
+            "drop" : Drop(),
+            "Combine" : Combine()
         }
         #dictionary of all actors available to this player including inventory, room contents, etc
         #of the form "name of actor" : actor reference
