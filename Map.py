@@ -18,7 +18,9 @@ class Map(object):
         self.dictForm = {}
         self.dictForm['Name'] = self.name
         self.dictForm['rooms'] = []
-          json.dump(self.dictForm,self.jsonFile,indent = -1)
+        for x in self.rooms:
+            self.dictForm['rooms'].append(x.Encode())
+        json.dump(self.dictForm,self.jsonFile,indent = -1)
         self.jsonFile.flush()
         self.jsonFile.close()
 
