@@ -25,7 +25,6 @@ class Use(Command):
         if(len(_words) != 4):
             response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"
         else:
-            if(context[_words[3]] == None):
             response = "You used the " + _words[1] + " on the " + _words[3] + '\n'
             response += context[_words[3]].Use(context[_words[1]])
             print("returned from celldoor use")
