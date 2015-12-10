@@ -2,6 +2,7 @@ from Tkinter import *
 import threading,json
 import tweepy
 import os.path
+import sys
 from TwitterInterface import TwitterInterface
 from webbrowser import open_new_tab
 import Game
@@ -59,7 +60,7 @@ except tweepy.TweepError:
     authName = "None"
 
 #A boolean to determine whether or not a game has been started
-startedGame = False
+startedGame = threading.Event()
 
 theGame = None
 
@@ -115,7 +116,9 @@ def ConfirmAccessToken(accessCode,botRunner):
         file.write(token[0]+'\n')
         file.write(token[1]+'\n')
 
-def StartGame():
+def StartGame(label):
+    label.set("Game Running")
+    startedGame.set()
     event.set()
 
 class App(threading.Thread):
@@ -123,21 +126,33 @@ class App(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.start()
+        
 
     def callback(self):
         if theGame is not None:
             theGame.running = False
         self.rootWindow.quit()
+        startedGame = False
+        event.set()
+        
+        
+    def close(self,event):
+        self.callback()
+        
 
     def run(self):
         #Create the root window. This is where all of the other GUI elements will be placed. It's unresizable at the moment, and the close button breaks the main loop.
         self.rootWindow = Tk()
         self.rootWindow.resizable(width=FALSE, height=FALSE)
         self.rootWindow.protocol("WM_DELETE_WINDOW", self.callback)
+        self.rootWindow.bind("<Escape>",self.close)
 
         #botRunner is a string variable that holds the name of the currently authenticated user.
         self.botRunner=StringVar()
         self.botRunner.set(authName)
+        
+        self.startVar = StringVar()
+        self.startVar.set("Game Not Running")
 
 
         #The main window is broken up into 4 frames.
@@ -178,16 +193,23 @@ class App(threading.Thread):
             userListBox.insert(END, name)
 
         remove = Button(self.frame11, text = "Remove User", command = lambda listBox=userListBox: RemoveUser(listBox) ).pack()
-
-        startGame = Button(self.rootWindow, text = "Start Game", command = lambda: StartGame()  )
+        startLabel = Label(self.rootWindow, textvariable = self.startVar)
+        startGame = Button(self.rootWindow, text = "Start Game", command = lambda label = self.startVar: StartGame(label) )
         startGame.grid(row=2, column=0)
+        startLabel = Label(self.rootWindow, textvariable = self.startVar)
+        startLabel.grid(row=2, column=1)
 
         self.rootWindow.mainloop()
 
 app = App()
 
+
 #after the app is instantiated, the game code is delayed until the Start Game button has been pressed.
 event.wait()
+
+if not startedGame.isSet():
+    app.join()
+    sys.exit()
 
 twitFace = TwitterInterface.Instance().Setup(myapi=theAPI, botName = authName)
 theGame = Game.Game.Instance()
