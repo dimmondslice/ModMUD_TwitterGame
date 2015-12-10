@@ -1,318 +1,657 @@
 {
-	"Name": "The Jail",
-	"rooms": [
-	{
-      "neighbors": {
-        "west": 12,
-        "east": 2,
-        "north": 5,
-        "south": 3
-      },
-      "description": "Cafeteria",
-      "players": [],
-      "actors": [],
-      "altDescription": "This is a cafeteria.",
-      "ID": 1,
-      "name": "Cafeteria"
-	},
-	{
-      "neighbors": {
-        "west": 1,
-        "east": 7,
-        "north": 6,
-        "south": 4
-      },
-      "description": "Office",
-      "players": [],
-      "actors": [],
-      "altDescription": "The Jail Office.",
-      "ID": 2,
-      "name": "Office"
-	},
-	{
-      "neighbors": {
-        "west": 11,
-        "east": 4,
-        "north": 1,
-        "south": 10
-      },
-      "description": "Study Hall",
-      "players": [],
-      "actors": [],
-      "altDescription": "Better your mind, better your soul.",
-      "ID": 3,
-      "name": "Study Hall"
-	},
-	{
-      "neighbors": {
-        "west": 3,
-        "east": 8,
-        "north": 2,
-        "south": 9
-      },
-      "description": "Workyard",
-      "players": [],
-      "actors": [],
-      "altDescription": "You can pick things up and put them down.",
-      "ID": 4,
-      "name": "Workyard"
-	},
-	{
-      "neighbors": {
-        "west": 0,
-        "east": 0,
-        "north": 0,
-        "south": 1
-      },
-      "description": "Cell A",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey A FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell A Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "south"
-
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 5,
-      "name": "Cell A"
-	},
-	{
-      "neighbors": {
-        "west": 0,
-        "east": 0,
-        "north": 0,
-        "south": 2
-      },
-      "description": "Cell B",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey B FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell B Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "south"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 6,
-      "name": "Cell B"
-	},
-	{
-      "neighbors": {
-        "west": 2,
-        "east": 0,
-        "north": 0,
-        "south": 0
-      },
-      "description": "Cell C",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey C FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell C Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "west"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 7,
-      "name": "Cell C"
-	},
-	{
-      "neighbors": {
-        "west": 4,
-        "east": 0,
-        "north": 0,
-        "south": 0
-      },
-      "description": "Cell D",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey D FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell D Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "west"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 8,
-      "name": "Cell D"
-	},
-	{
-      "neighbors": {
-        "west": 0,
-        "east": 0,
-        "north": 4,
-        "south": 0
-      },
-      "description": "Cell E",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey E FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell E Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "north"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 9,
-      "name": "Cell E"
-	},
-	{
-      "neighbors": {
-        "west": 0,
-        "east": 0,
-        "north": 3,
-        "south": 0
-      },
-      "description": "Cell F",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey F FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell F Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "north"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 10,
-      "name": "Cell F"
-	},
-	{
-      "neighbors": {
-        "west": 0,
-        "east": 3,
-        "north": 0,
-        "south": 0
-      },
-      "description": "Cell G",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey G FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell G Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "east"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 11,
-      "name": "Cell G"
-	},
-	{
-      "neighbors": {
-        "west": 0,
-        "east": 1,
-        "north": 0,
-        "south": 0
-      },
-      "description": "Cell H",
-      "players": [],
-      "actors": [
-		{
-		"location": null, 
-		"altDescription": "Two halves make a whole.",
-		"description": "A part of a key. It's the bit with all the teeth on it.", 
-		"takeable": true, 
-		"name": "CellKey H FrontHalf",
-		"type":"KeyHalf"
-		},
-		{
-		"location": null, 
-		"altDescription": "This exit could be the key to your escape.",
-		"description": "A sturdy door with a sturdier lock.", 
-		"takeable": false, 
-		"name": "Cell H Door",
-		"type":"CellDoor",
-		"adjacentRoom" : "east"
-		}
-	  ],
-      "altDescription": "A concrete cell. It smells of damp and misdemeanors.",
-      "ID": 12,
-      "name": "Cell H"
-	}
-	]
+"Name": "Test", 
+"rooms": [
+{
+"neighbors": {
+"west": 0, 
+"east": 2, 
+"north": 0, 
+"south": 3
+}, 
+"description": "Cafeteria", 
+"players": [], 
+"actors": [], 
+"altDescription": "This is a cafeteria.", 
+"ID": 1, 
+"name": "Cafeteria"
+}, 
+{
+"neighbors": {
+"west": 1, 
+"east": 0, 
+"north": 0, 
+"south": 4
+}, 
+"description": "Office", 
+"players": [], 
+"actors": [], 
+"altDescription": "The Jail Office.", 
+"ID": 2, 
+"name": "Office"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 4, 
+"north": 1, 
+"south": 0
+}, 
+"description": "Study Hall", 
+"players": [], 
+"actors": [], 
+"altDescription": "Better your mind, better your soul.", 
+"ID": 3, 
+"name": "Study Hall"
+}, 
+{
+"neighbors": {
+"west": 3, 
+"east": 0, 
+"north": 2, 
+"south": 0
+}, 
+"description": "Workyard", 
+"players": [], 
+"actors": [], 
+"altDescription": "You can pick things up and put them down.", 
+"ID": 4, 
+"name": "Workyard"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 0, 
+"north": 0, 
+"south": 1
+}, 
+"description": "Cell A", 
+"players": [
+"rpietrzak256", 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"name": "rpietrzak256", 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"location": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"name": "rpietrzak256"
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"name": "rpietrzak256", 
+"level": 0, 
+"weapon": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}
+], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey A FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "south", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell A Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 5, 
+"name": "Cell A"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 0, 
+"north": 0, 
+"south": 2
+}, 
+"description": "Cell B", 
+"players": [
+"actuallyspenc", 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"name": "actuallyspenc", 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"location": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"name": "actuallyspenc"
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"name": "actuallyspenc", 
+"level": 0, 
+"weapon": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}
+], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey B FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "south", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell B Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 6, 
+"name": "Cell B"
+}, 
+{
+"neighbors": {
+"west": 2, 
+"east": 0, 
+"north": 0, 
+"south": 0
+}, 
+"description": "Cell C", 
+"players": [
+"Phrawger", 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"name": "Phrawger", 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"location": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"name": "Phrawger"
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"name": "Phrawger", 
+"level": 0, 
+"weapon": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}
+], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey C FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "west", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell C Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 7, 
+"name": "Cell C"
+}, 
+{
+"neighbors": {
+"west": 4, 
+"east": 0, 
+"north": 0, 
+"south": 0
+}, 
+"description": "Cell D", 
+"players": [
+"g7parsh", 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"name": "g7parsh", 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"location": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"name": "g7parsh"
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"name": "g7parsh", 
+"level": 0, 
+"weapon": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}
+], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey D FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "west", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell D Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 8, 
+"name": "Cell D"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 0, 
+"north": 4, 
+"south": 0
+}, 
+"description": "Cell E", 
+"players": [
+"duelmajor", 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"name": "duelmajor", 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"level": 0, 
+"weapon": null, 
+"location": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"name": "duelmajor"
+}, 
+{
+"stats": null, 
+"description": "Description text", 
+"name": "duelmajor", 
+"level": 0, 
+"weapon": null, 
+"inventory": [
+{
+"description": "Description text", 
+"location": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Actor", 
+"takeable": true, 
+"name": "Mysterious Key A1"
+}
+], 
+"gear": null, 
+"altDescription": " Default Alternate description text", 
+"type": "Player", 
+"takeable": true, 
+"location": null
+}
+], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey E FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "north", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell E Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 9, 
+"name": "Cell E"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 0, 
+"north": 3, 
+"south": 0
+}, 
+"description": "Cell F", 
+"players": [], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey F FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "north", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell F Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 10, 
+"name": "Cell F"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 3, 
+"north": 0, 
+"south": 0
+}, 
+"description": "Cell G", 
+"players": [], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey G FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "east", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell G Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 11, 
+"name": "Cell G"
+}, 
+{
+"neighbors": {
+"west": 0, 
+"east": 1, 
+"north": 0, 
+"south": 0
+}, 
+"description": "Cell H", 
+"players": [], 
+"actors": [
+{
+"description": "A part of a key. It's the bit with all the teeth on it.", 
+"location": null, 
+"altDescription": "Two halves make a whole.", 
+"type": "Actor", 
+"takeable": true, 
+"name": "CellKey H FrontHalf"
+}, 
+{
+"description": "A sturdy door with a sturdier lock.", 
+"adjacentRoom": "east", 
+"location": null, 
+"altDescription": "This exit could be the key to your escape.", 
+"type": "CellDoor", 
+"takeable": false, 
+"name": "Cell H Door"
+}
+], 
+"altDescription": "A concrete cell. It smells of damp and misdemeanors.", 
+"ID": 12, 
+"name": "Cell H"
+}
+]
 }
