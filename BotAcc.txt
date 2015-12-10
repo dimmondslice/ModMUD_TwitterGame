@@ -1,2 +1,2 @@
-U/N = SDADBOT
+U/N = ModMUDBot or g7parsh+SDAD@Gmail.com
 P/W = thisisapassword
