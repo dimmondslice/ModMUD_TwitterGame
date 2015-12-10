@@ -8,7 +8,7 @@ class Combine(Command):
         super(Combine, self).__init__()
         
         self.name = "combine"
-        self.grammer = [["combine"],[],["with"],[]]
+        self.grammer = [["combine"],[],["with", "and"],[]]
     
     def CombineThem():
         pass

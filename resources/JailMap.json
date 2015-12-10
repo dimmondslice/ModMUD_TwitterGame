@@ -85,7 +85,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey A FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -131,7 +131,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey B FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -177,7 +177,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey C FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -223,7 +223,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey D FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -269,7 +269,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey E FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -301,7 +301,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey F FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -333,7 +333,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey G FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
@@ -365,7 +365,7 @@
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey H FrontHalf", 
 "altDescription": "Two halves make a whole.", 
-"type": "Actor", 
+"type": "KeyHalf", 
 "takeable": true, 
 "location": null
 }, 
