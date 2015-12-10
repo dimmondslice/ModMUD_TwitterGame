@@ -26,10 +26,18 @@ class Room(Entity):
     def Encode(self):
         myDict = self.__dict__
         actorDicts = []
+        playerDicts = []
+        numPlayer = len(self.players)
+        print numPlayer
         for x in self.actors:
             actorDicts.append(x.Encode())
+        for x in self.players:
+
+            if x not in playerDicts:
+                playerDicts.append(x.Encode())
 
         myDict["actors"] = actorDicts
+        myDict["players"] = playerDicts
 
         return myDict
         # JSON to obj converter
@@ -45,10 +53,11 @@ class Room(Entity):
 
         # Stores objs in a JSON format for ease of saving and reading.
     def Decode(self, _room):
+        #print _room
         self.neighbors = _room['neighbors']
         self.ID = _room['ID']
         self.name = _room['name']
-        self.players = _room['players']
+        self.players = []
         self.description = _room['description']
         self.altDescription = _room['altDescription']
         #redefine the actors list and populate it from data in the json
@@ -77,5 +86,12 @@ class Room(Entity):
                 dummy = Actor(actorDict)
                 dummy.location = self
                 self.actors.append(dummy)
+        #print "decoding player"
+
+        from Player import Player
+        for player in _room['players']:
+            dummy = Player(_dict = player)
+            self.players.append(dummy)
+        #print "Number of players in room "+ str(len(self.players))
 
 

@@ -20,18 +20,20 @@ class Map(object):
         self.dictForm['rooms'] = []
         for x in self.rooms:
             self.dictForm['rooms'].append(x.Encode())
-        json.dump(self.dictForm,self.jsonFile,indent = -2)
+
+        json.dump(self.dictForm,self.jsonFile,indent = -1)
         self.jsonFile.flush()
         self.jsonFile.close()
 
 
     #does the opposite of the above.
-    def DecodeJSON(self):
+    def DecodeMap(self):
         mapfile = open("resources\\JailMap.json",'r')
         _dict = json.load(mapfile)
         for room in _dict['rooms']:
             a = Room(_dict = room)
             self.rooms.append(a)
+        self.name = _dict['Name']
 
     def GetRoomByID(self, ID):
         for room in self.rooms:

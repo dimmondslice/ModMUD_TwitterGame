@@ -66,67 +66,13 @@
 }, 
 "description": "Cell A", 
 "players": [
-"rpietrzak256", 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"name": "rpietrzak256", 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}, 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"location": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"name": "rpietrzak256"
-}, 
 {
 "stats": null, 
 "description": "Description text", 
 "name": "rpietrzak256", 
 "level": 0, 
 "weapon": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
+"inventory": [], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -137,11 +83,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey A FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey A FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -166,67 +112,13 @@
 }, 
 "description": "Cell B", 
 "players": [
-"actuallyspenc", 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"name": "actuallyspenc", 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}, 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"location": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"name": "actuallyspenc"
-}, 
 {
 "stats": null, 
 "description": "Description text", 
 "name": "actuallyspenc", 
 "level": 0, 
 "weapon": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
+"inventory": [], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -237,11 +129,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey B FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey B FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -266,67 +158,13 @@
 }, 
 "description": "Cell C", 
 "players": [
-"Phrawger", 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"name": "Phrawger", 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}, 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"location": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"name": "Phrawger"
-}, 
 {
 "stats": null, 
 "description": "Description text", 
 "name": "Phrawger", 
 "level": 0, 
 "weapon": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
+"inventory": [], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -337,11 +175,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey C FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey C FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -366,67 +204,13 @@
 }, 
 "description": "Cell D", 
 "players": [
-"g7parsh", 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"name": "g7parsh", 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}, 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"location": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"name": "g7parsh"
-}, 
 {
 "stats": null, 
 "description": "Description text", 
 "name": "g7parsh", 
 "level": 0, 
 "weapon": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
+"inventory": [], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -437,11 +221,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey D FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey D FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -466,67 +250,13 @@
 }, 
 "description": "Cell E", 
 "players": [
-"duelmajor", 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"name": "duelmajor", 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}, 
-{
-"stats": null, 
-"description": "Description text", 
-"level": 0, 
-"weapon": null, 
-"location": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"name": "duelmajor"
-}, 
 {
 "stats": null, 
 "description": "Description text", 
 "name": "duelmajor", 
 "level": 0, 
 "weapon": null, 
-"inventory": [
-{
-"description": "Description text", 
-"location": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Actor", 
-"takeable": true, 
-"name": "Mysterious Key A1"
-}
-], 
+"inventory": [], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -537,11 +267,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey E FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey E FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -569,11 +299,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey F FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey F FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -601,11 +331,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey G FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey G FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
@@ -633,11 +363,11 @@
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
-"location": null, 
+"name": "CellKey H FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "Actor", 
 "takeable": true, 
-"name": "CellKey H FrontHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
