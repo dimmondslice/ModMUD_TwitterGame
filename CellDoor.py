@@ -12,7 +12,6 @@ class CellDoor(Actor):
             self.name = "unnamed cell door"
             #of the form ["direction door leads", ID of room the door leads to]
             self.adjacentRoom = None
-            #self.adjacentRoomID = 0
 
     #cell door's use function will unlock the door if the player uses the right key on it, then it will reinstate the connection between the room
     #that contains this door, and the adjacent room
@@ -21,10 +20,10 @@ class CellDoor(Actor):
         response = "celldoor use response"
         if(_actorUsedWith.name[5] == self.name[5]):
             #now re enable the neighbor connections
-            self.location.neighbors[self.adjacentRoom[0]] = self.adjacentRoom[1]
-            neighborRoom = Map.Instance().GetRoomByID(self.adjacentRoom[1])
+            self.location.neighbors[self.adjacentRoom] = self.adjacentID
+            neighborRoom = Map.Instance().GetRoomByID(self.adjacentID)
             #to to the neighbor room and re enable its connection to this room
-            neighborRoom.neighbors[self.OppositeDir(self.adjacentRoom[0])] = self.location.ID
+            neighborRoom.neighbors[self.OppositeDir(self.adjacentRoom)] = self.location.ID
 
             response = "There is a satisfying mechanical crunch as the lock tumbler moves into place and the cell door creaks open. Why is a space prison using such antiquated technology anyway?\nYou can now go " + self.adjacentRoom[0]
         else:
@@ -36,14 +35,14 @@ class CellDoor(Actor):
         super(CellDoor, self).Decode(_dict)
 
         #now is when I will actually set self.adjecentRoom, bc I can garauntee I know self.location now
-        print("adjacentRoom = " + _dict["adjacentRoom"])
         roomID = self.location.neighbors[ _dict["adjacentRoom"]]
         #within the code,unlike the JSON, self.adjacentRoom is actually a list in the form ["direction this door leads to", id of that room]
-        print roomID
-        self.adjacentRoom = [ _dict["adjacentRoom"], roomID]
+
+        self.adjacentRoom = _dict["adjacentRoom"]
+        self.adjacentID =  _dict["adjacentID"]
         #now disable the neighbor connections
-        neighborID = self.location.neighbors[_dict["adjacentRoom"]]
-        neighborRoom = Map.Instance().GetRoomByID(neighborID)
+        #neighborID = self.location.neighbors[_dict["adjacentRoom"]]
+        neighborRoom = Map.Instance().GetRoomByID(self.adjacentID)
         #gross thing then just returns the opposite direction of the one given is used to turn off the "other side of this door"
         neighborRoom.neighbors[self.OppositeDir(_dict["adjacentRoom"])] = 0
 
@@ -63,6 +62,7 @@ class CellDoor(Actor):
     def Encode(self):
         #we're not calling actor encode, so we also need to not encode the location
         myDict = self.__dict__
-        myDict["adjacentRoom"] = self.adjacentRoom[0]
+        myDict["adjacentRoom"] = self.adjacentRoom
+        myDict["adjacentID"] = self.adjacentID
         myDict['location'] = None
         return myDict

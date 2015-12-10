@@ -62,7 +62,7 @@
 "west": 0, 
 "east": 0, 
 "north": 0, 
-"south": 1
+"south": 0
 }, 
 "description": "Cell A", 
 "players": [
@@ -72,7 +72,25 @@
 "name": "rpietrzak256", 
 "level": 0, 
 "weapon": null, 
-"inventory": [], 
+"inventory": [
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey A BackHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}, 
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey A BackHalf", 
+"otherHalf": "CellKey A FrontHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}
+], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -84,16 +102,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey A FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey A BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey A BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "south", 
 "location": null, 
+"adjacentID": 1, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -109,7 +128,7 @@
 "west": 0, 
 "east": 0, 
 "north": 0, 
-"south": 2
+"south": 0
 }, 
 "description": "Cell B", 
 "players": [
@@ -119,7 +138,25 @@
 "name": "actuallyspenc", 
 "level": 0, 
 "weapon": null, 
-"inventory": [], 
+"inventory": [
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey B BackHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}, 
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey B BackHalf", 
+"otherHalf": "CellKey B FrontHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}
+], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -131,16 +168,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey B FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey B BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey B BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "south", 
 "location": null, 
+"adjacentID": 2, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -153,7 +191,7 @@
 }, 
 {
 "neighbors": {
-"west": 2, 
+"west": 0, 
 "east": 0, 
 "north": 0, 
 "south": 0
@@ -166,7 +204,25 @@
 "name": "Phrawger", 
 "level": 0, 
 "weapon": null, 
-"inventory": [], 
+"inventory": [
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey C BackHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}, 
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey C BackHalf", 
+"otherHalf": "CellKey C FrontHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}
+], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -178,16 +234,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey C FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey C BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey C BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "west", 
 "location": null, 
+"adjacentID": 2, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -200,7 +257,7 @@
 }, 
 {
 "neighbors": {
-"west": 4, 
+"west": 0, 
 "east": 0, 
 "north": 0, 
 "south": 0
@@ -213,7 +270,25 @@
 "name": "g7parsh", 
 "level": 0, 
 "weapon": null, 
-"inventory": [], 
+"inventory": [
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey D BackHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}, 
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey D BackHalf", 
+"otherHalf": "CellKey D FrontHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}
+], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -225,16 +300,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey D FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey D BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey D BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "west", 
 "location": null, 
+"adjacentID": 4, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -249,7 +325,7 @@
 "neighbors": {
 "west": 0, 
 "east": 0, 
-"north": 4, 
+"north": 0, 
 "south": 0
 }, 
 "description": "Cell E", 
@@ -260,7 +336,25 @@
 "name": "duelmajor", 
 "level": 0, 
 "weapon": null, 
-"inventory": [], 
+"inventory": [
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey E BackHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}, 
+{
+"description": "A part of a key. It's the bit on top that you hold it by.", 
+"name": "CellKey E BackHalf", 
+"otherHalf": "CellKey E FrontHalf", 
+"altDescription": "Two halves make a whole.", 
+"type": "KeyHalf", 
+"takeable": true, 
+"location": null
+}
+], 
 "gear": null, 
 "altDescription": " Default Alternate description text", 
 "type": "Player", 
@@ -272,16 +366,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey E FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey E BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey E BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "north", 
 "location": null, 
+"adjacentID": 4, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -296,7 +391,7 @@
 "neighbors": {
 "west": 0, 
 "east": 0, 
-"north": 3, 
+"north": 0, 
 "south": 0
 }, 
 "description": "Cell F", 
@@ -305,16 +400,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey F FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey F BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey F BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "north", 
 "location": null, 
+"adjacentID": 3, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -328,7 +424,7 @@
 {
 "neighbors": {
 "west": 0, 
-"east": 3, 
+"east": 0, 
 "north": 0, 
 "south": 0
 }, 
@@ -338,16 +434,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey G FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey G BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey G BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "east", 
 "location": null, 
+"adjacentID": 3, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
@@ -361,7 +458,7 @@
 {
 "neighbors": {
 "west": 0, 
-"east": 1, 
+"east": 0, 
 "north": 0, 
 "south": 0
 }, 
@@ -371,16 +468,17 @@
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
 "name": "CellKey H FrontHalf", 
-"altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
+"altDescription": "Two halves make a whole.", 
+"otherHalf": "CellKey H BackHalf", 
 "takeable": true, 
-"location": null,
-"otherHalf": "CellKey H BackHalf"
+"location": null
 }, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "east", 
 "location": null, 
+"adjacentID": 1, 
 "altDescription": "This exit could be the key to your escape.", 
 "type": "CellDoor", 
 "takeable": false, 
