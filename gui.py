@@ -131,6 +131,7 @@ class App(threading.Thread):
     def callback(self):
         if theGame is not None:
             theGame.running = False
+            theGame.SaveGame()
         self.rootWindow.quit()
         startedGame = False
         event.set()
