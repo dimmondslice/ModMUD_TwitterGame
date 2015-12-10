@@ -56,12 +56,18 @@ class Room(Entity):
         for actorDict in _room['actors']:
             if(actorDict["type"]=="CellDoor"):
                 from CellDoor import CellDoor
+                from KeyHalf import KeyHalf
                 #it's important that we call the constructor with out passing it the actorDict, that way the decode happens after the location is set
-                dummy = locate(actorDict["type"]).CellDoor()
+                dummy = None
+                if("CellDoor" in locate(actorDict["type"])):
+                    dummy = locate(actorDict["type"]).CellDoor()
+                elif("KeyHalf" in locate(actorDict["type"])):
+                    dummy = locate(actorDict["type"]).Keyhalf()
                 dummy.location = self
                 dummy.Decode(actorDict)
                 self.actors.append(dummy)
                 del CellDoor
+                del KeyHalf
             else:
                 dummy = Actor(actorDict)
                 dummy.location = self
