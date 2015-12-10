@@ -82,6 +82,7 @@ class Player(Person):
                 context[item.name.lower()] = item
         if(includeRoom):
             for actor in self.location.actors:
+                print(actor)
                 context[actor.name.lower()] = actor
 
         return context

@@ -50,6 +50,8 @@ class CellDoor(Actor):
             return "west"
 
     def Encode(self):
+        #we're not calling actor encode, so we also need to not encode the location
         myDict = self.__dict__
         myDict["adjacentRoom"] = self.adjacentRoom[0]
+        myDict['location'] = None
         return myDict
