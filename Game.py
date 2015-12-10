@@ -13,6 +13,7 @@ class Game(object):
         self.map = Map.Instance()
         self.map.DecodeJSON()
         self.players = {}
+        
 
     #returns a player object with the requested username
     def FindPlayer(self, username):
@@ -47,7 +48,7 @@ class Game(object):
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):
         print("started game")
-        Map.Instance().EncodeMap()
+               
         while self.running:
             messages = self.twitFace.getMessages()          #grab the messages from the twitter interface
             #each message in form [user:string, text:string, id:int]
@@ -59,3 +60,10 @@ class Game(object):
                 except KeyError:
                     #twitter user is not a player in the game
                     print message[0] + " is not a player. message ignored"
+    def SaveGame(self):
+        for room in self.map.rooms:
+            for actor in room.players:
+                room.players.append(self.players[actor].Encode())
+                print actor
+                break
+        self.map.EncodeMap()
