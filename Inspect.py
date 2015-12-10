@@ -37,7 +37,7 @@ class Inspect(Command):
                 response = "There is no " + words[1] + " to inspect"
 
         else:
-            response = "Incorrect usage of inspect command"
+            response = "Incorrect usage of inspect command. Try 'inspect' [item] or 'inspect' 'room'"
 
         self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 
