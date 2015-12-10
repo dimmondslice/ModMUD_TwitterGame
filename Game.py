@@ -66,6 +66,7 @@ class Game(object):
                         if p.name == ID:
                             self.players[ID] = p
                             print str(ID) + " already in map!"
+                            """
                             #by default every character gets a half key in their inventory! 
                             newKeyDict = {
                                 "description": "A part of a key. It's the bit on top that you hold it by.", 
@@ -78,7 +79,7 @@ class Game(object):
                             }
                             key = KeyHalf(_dict = newKeyDict)
                             self.players[ID].AddToInventory(key)
-                            print("everyone gets a key!!!!")
+                            print("everyone gets a key!!!!")"""
 
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):

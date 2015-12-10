@@ -80,15 +80,6 @@
 "type": "KeyHalf", 
 "takeable": true, 
 "location": null
-}, 
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey A BackHalf", 
-"otherHalf": "CellKey A FrontHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
 }
 ], 
 "gear": null, 
@@ -142,15 +133,6 @@
 {
 "description": "A part of a key. It's the bit on top that you hold it by.", 
 "name": "CellKey B BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
-}, 
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey B BackHalf", 
-"otherHalf": "CellKey B FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
@@ -212,15 +194,6 @@
 "type": "KeyHalf", 
 "takeable": true, 
 "location": null
-}, 
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey C BackHalf", 
-"otherHalf": "CellKey C FrontHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
 }
 ], 
 "gear": null, 
@@ -278,15 +251,6 @@
 "type": "KeyHalf", 
 "takeable": true, 
 "location": null
-}, 
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey D BackHalf", 
-"otherHalf": "CellKey D FrontHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
 }
 ], 
 "gear": null, 
@@ -340,15 +304,6 @@
 {
 "description": "A part of a key. It's the bit on top that you hold it by.", 
 "name": "CellKey E BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
-}, 
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey E BackHalf", 
-"otherHalf": "CellKey E FrontHalf", 
 "altDescription": "Two halves make a whole.", 
 "type": "KeyHalf", 
 "takeable": true, 
