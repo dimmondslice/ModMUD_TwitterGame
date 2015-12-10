@@ -16,16 +16,18 @@ class Actor(Entity):
     Allows saving Actors to json as well as creating objects from a json file.
     '''
     def Decode(self, _dict):
+       # print _dict["name"]
         self.altDescription = _dict["altDescription"]
         self.description = _dict["description"]
         self.takeable = _dict["takeable"]
         self.name = _dict["name"]
         self.type = _dict["type"]
 
+
     def Encode(self):
         myDict = self.__dict__
         myDict['location'] = None
-        return myDict
+        return dict(myDict)
 
     def Use(self):
         pass

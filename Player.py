@@ -90,10 +90,12 @@ class Player(Person):
     def Encode(self):
         dictFrom =  dict(self.__dict__)
         items = []
+        dictFrom["location"] = None
         for x in self.inventory:
             items.append(x.Encode())
         del dictFrom["verbContext"]
         dictFrom["inventory"] = items
         return dictFrom
     def Decode(self, _dict):
+       # print "print from player.py " + _dict["name"] 
         super(Player,self).Decode(_dict)
