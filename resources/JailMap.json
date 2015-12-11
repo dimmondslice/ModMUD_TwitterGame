@@ -69,15 +69,15 @@
 {
 "stats": null, 
 "description": "Description text", 
-"name": "rpietrzak256", 
+"name": "duelmajor", 
 "level": 0, 
 "weapon": null, 
 "inventory": [
 {
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey A BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
+"description": "Hey look, it's a whole key now!", 
+"name": "Cell A Key", 
+"altDescription": "Use this to unlock the cell door, What did you think it would do?", 
+"type": "Actor", 
 "takeable": true, 
 "location": null
 }
@@ -90,15 +90,6 @@
 }
 ], 
 "actors": [
-{
-"description": "A part of a key. It's the bit with all the teeth on it.", 
-"name": "CellKey A FrontHalf", 
-"type": "KeyHalf", 
-"altDescription": "Two halves make a whole.", 
-"otherHalf": "CellKey A BackHalf", 
-"takeable": true, 
-"location": null
-}, 
 {
 "description": "A sturdy door with a sturdier lock.", 
 "adjacentRoom": "south", 
@@ -122,30 +113,7 @@
 "south": 0
 }, 
 "description": "Cell B", 
-"players": [
-{
-"stats": null, 
-"description": "Description text", 
-"name": "actuallyspenc", 
-"level": 0, 
-"weapon": null, 
-"inventory": [
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey B BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}
-], 
+"players": [], 
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
@@ -179,30 +147,7 @@
 "south": 0
 }, 
 "description": "Cell C", 
-"players": [
-{
-"stats": null, 
-"description": "Description text", 
-"name": "Phrawger", 
-"level": 0, 
-"weapon": null, 
-"inventory": [
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey C BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}
-], 
+"players": [], 
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
@@ -236,30 +181,7 @@
 "south": 0
 }, 
 "description": "Cell D", 
-"players": [
-{
-"stats": null, 
-"description": "Description text", 
-"name": "g7parsh", 
-"level": 0, 
-"weapon": null, 
-"inventory": [
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey D BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}
-], 
+"players": [], 
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
@@ -293,30 +215,7 @@
 "south": 0
 }, 
 "description": "Cell E", 
-"players": [
-{
-"stats": null, 
-"description": "Description text", 
-"name": "duelmajor", 
-"level": 0, 
-"weapon": null, 
-"inventory": [
-{
-"description": "A part of a key. It's the bit on top that you hold it by.", 
-"name": "CellKey E BackHalf", 
-"altDescription": "Two halves make a whole.", 
-"type": "KeyHalf", 
-"takeable": true, 
-"location": null
-}
-], 
-"gear": null, 
-"altDescription": " Default Alternate description text", 
-"type": "Player", 
-"takeable": true, 
-"location": null
-}
-], 
+"players": [], 
 "actors": [
 {
 "description": "A part of a key. It's the bit with all the teeth on it.", 
