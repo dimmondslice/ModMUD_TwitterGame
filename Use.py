@@ -26,9 +26,14 @@ class Use(Command):
         if(len(_words) != 4):
             response = "Incorrect usage of Use command. Try 'Use' [object] 'on' [object]"
         else:
-            response = "You used the " + _words[1] + " on the " + _words[3] + '\n'
-            response += context[_words[3]].Use(context[_words[1]])
-            print("returned from celldoor use")
+            print _words[3]
+            if(_words[3] in context.keys()):
+                use = context[_words[3]].Use(context[_words[1]])
+                if(use != None ):
+                    response = "You used the " + _words[1] + " on the " + _words[3] + '\n'
+                    response += use
+                else:
+                    response = "You can't use that!"
 
         self.twit.SendMessage(_dm[2], _dm[1], response, _dm[0])
 

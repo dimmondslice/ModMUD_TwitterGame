@@ -30,5 +30,5 @@ class Actor(Entity):
         return dict(myDict)
 
     def Use(self, _actorUsedWith):
-        pass
+        return None
 

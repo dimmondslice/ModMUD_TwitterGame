@@ -54,7 +54,8 @@ class Game(object):
                             "altDescription": "Two halves make a whole.", 
                             "type": "KeyHalf", 
                             "takeable": True, 
-                            "location": None
+                            "location": None,
+                            "otherHalf" : "CellKey "+ room.name[5] + " FrontHalf"
                         }
                         key = KeyHalf(_dict = newKeyDict)
                         self.players[ID].AddToInventory(key)
