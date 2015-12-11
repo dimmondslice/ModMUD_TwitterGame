@@ -25,7 +25,7 @@ class CellDoor(Actor):
             #to to the neighbor room and re enable its connection to this room
             neighborRoom.neighbors[self.OppositeDir(self.adjacentRoom)] = self.location.ID
 
-            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place and the cell door creaks open. Why is a space prison using such antiquated technology anyway?\nYou can now go " + self.adjacentRoom[0]
+            response = "There is a satisfying mechanical crunch as the lock tumbler moves into place and the cell door creaks open. Why is a space prison using such antiquated technology anyway?\nYou can now go " + self.adjacentRoom
         else:
             response = "but it didn't seem to do anything"
 

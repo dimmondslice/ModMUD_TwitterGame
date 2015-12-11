@@ -66,7 +66,15 @@ class Game(object):
                         if p.name == ID:
                             self.players[ID] = p
                             print str(ID) + " already in map!"
-                            """
+
+                            i = 0
+                            #delete any older duplicate key
+                            while(i < len(p.inventory)):
+                                if(p.inventory[i].name == "CellKey "+ room.name[5] + " BackHalf" ):
+                                    del(p.inventory[i])
+                                    i-=1
+                                i+=1
+
                             #by default every character gets a half key in their inventory! 
                             newKeyDict = {
                                 "description": "A part of a key. It's the bit on top that you hold it by.", 
@@ -79,7 +87,7 @@ class Game(object):
                             }
                             key = KeyHalf(_dict = newKeyDict)
                             self.players[ID].AddToInventory(key)
-                            print("everyone gets a key!!!!")"""
+                            print("everyone gets a key!!!!")
 
     #only called once after constructing the Game object, this begins the master while loop
     def RunGame(self):
